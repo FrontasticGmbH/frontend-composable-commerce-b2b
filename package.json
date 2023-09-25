@@ -1,0 +1,26 @@
+{
+	"name": "@commercetools/frontend-b2b-composable-commerce",
+	"version": "1.0.0",
+	"license": "UNLICENSED",
+	"main": "lib/index.js",
+	"scripts": {
+		"dev": "tsup --env.NODE_ENV dev",
+		"build": "tsup",
+		"release": "tsup",
+		"prepublishOnly": "rm -rf lib && yarn install && yarn release",
+		"release:types": "tsc --emitDeclarationOnly --outDir lib",
+		"prettier:fix": "prettier --write ."
+	},
+	"devDependencies": {
+		"@commercetools/frontend-sdk": "^1.8.2",
+		"@types/core-js": "2.5.5",
+		"tsup": "^6.7.0",
+		"typescript": "^4.9.3"
+	},
+	"peerDependencies": {
+		"@commercetools/frontend-sdk": "^1.8.2"
+	},
+	"resolutions": {
+		"tsup/rollup": "3.20.4"
+	}
+}
