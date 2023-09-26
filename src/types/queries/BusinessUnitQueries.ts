@@ -46,15 +46,15 @@ type RemoveBusinessUnitAddressQuery = {
 };
 
 export {
-	GetBusinessUnitQuery,
-	GetBusinessUnitsQuery,
-	UpdateBusinessUnitQuery,
-	RemoveBusinessUnitQuery,
-	AddAssociateQuery,
-	UpdateAssociateQuery,
-	RemoveAssociateQuery,
-	GetBusinessUnitOrdersQuery,
-	AddBusinessUnitAddressQuery,
-	UpdateBusinessUnitAddressQuery,
-	RemoveBusinessUnitAddressQuery,
+	type GetBusinessUnitQuery,
+	type GetBusinessUnitsQuery,
+	type UpdateBusinessUnitQuery,
+	type RemoveBusinessUnitQuery,
+	type AddAssociateQuery,
+	type UpdateAssociateQuery,
+	type RemoveAssociateQuery,
+	type GetBusinessUnitOrdersQuery,
+	type AddBusinessUnitAddressQuery,
+	type UpdateBusinessUnitAddressQuery,
+	type RemoveBusinessUnitAddressQuery,
 };

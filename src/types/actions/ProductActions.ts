@@ -32,8 +32,8 @@ type GetSearchableProductAttributesAction = (options?: {
 }) => Promise<SDKResponse<FilterField[]>>;
 
 export {
-	GetProductAction,
-	ProductQueryAction,
-	QueryProductCategoriesAction,
-	GetSearchableProductAttributesAction,
+	type GetProductAction,
+	type ProductQueryAction,
+	type QueryProductCategoriesAction,
+	type GetSearchableProductAttributesAction,
 };

@@ -5,4 +5,4 @@ type GetProjectSettingsAction = (options?: {
 	serverOptions?: ServerOptions;
 }) => Promise<SDKResponse<ProjectSettings>>;
 
-export { GetProjectSettingsAction };
+export { type GetProjectSettingsAction };

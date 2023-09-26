@@ -40,9 +40,9 @@ type CancelQuoteAction = (
 ) => Promise<SDKResponse<QuoteRequest>>;
 
 export {
-	CreateQuoteAction,
-	GetQuotesAction,
-	AcceptQuoteAction,
-	DeclineQuoteAction,
-	CancelQuoteAction,
+	type CreateQuoteAction,
+	type GetQuotesAction,
+	type AcceptQuoteAction,
+	type DeclineQuoteAction,
+	type CancelQuoteAction,
 };

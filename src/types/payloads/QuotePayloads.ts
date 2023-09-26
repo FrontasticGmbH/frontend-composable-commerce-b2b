@@ -2,4 +2,4 @@ type CreateQuotePayload = {
 	comment: string;
 };
 
-export { CreateQuotePayload };
+export { type CreateQuotePayload };

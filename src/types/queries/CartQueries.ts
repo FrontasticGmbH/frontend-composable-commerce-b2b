@@ -2,4 +2,4 @@ type GetCartShippingMethodsQuery = {
 	onlyMatching: boolean;
 };
 
-export { GetCartShippingMethodsQuery };
+export { type GetCartShippingMethodsQuery };

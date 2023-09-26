@@ -25,143 +25,143 @@ import { GetCartShippingMethodsQuery } from "../queries/CartQueries";
 
 type GetCartAction = (options?: {
 	serverOptions?: ServerOptions;
-}) => Promise<SDKResponse<Cart>>; // getCart
+}) => Promise<SDKResponse<Cart>>;
 
 type UpdateCartAction = (
 	payload: UpdateCartPayload,
 	options?: {
 		serverOptions?: ServerOptions;
 	}
-) => Promise<SDKResponse<Cart>>; // updateCart
+) => Promise<SDKResponse<Cart>>;
 
 type ReassignCartAction = (
 	payload: ReassignCartPayload,
 	options?: {
 		serverOptions?: ServerOptions;
 	}
-) => Promise<SDKResponse<Cart>>; // reassignCart
+) => Promise<SDKResponse<Cart>>;
 
 type ReplicateOrderAction = (options?: {
 	serverOptions?: ServerOptions;
-}) => Promise<SDKResponse<Order>>; // replicateCart
+}) => Promise<SDKResponse<Order>>;
 
 type AddCartItemAction = (
 	payload: AddCartItemPayload,
 	options?: {
 		serverOptions?: ServerOptions;
 	}
-) => Promise<SDKResponse<Cart>>; // addToCart
+) => Promise<SDKResponse<Cart>>;
 
 type UpdateCartItemAction = (
 	payload: UpdateCartItemPayload,
 	options?: {
 		serverOptions?: ServerOptions;
 	}
-) => Promise<SDKResponse<Cart>>; // updateLineItem
+) => Promise<SDKResponse<Cart>>;
 
 type SplitCartItemAction = (
 	payload: SplitCartItemPayload,
 	options?: {
 		serverOptions?: ServerOptions;
 	}
-) => Promise<SDKResponse<Cart>>; // splitLineItem
+) => Promise<SDKResponse<Cart>>;
 
 type RemoveCartItemAction = (
 	payload: RemoveCartItemPayload,
 	options?: {
 		serverOptions?: ServerOptions;
 	}
-) => Promise<SDKResponse<Cart>>; // removeLineItem dupe
+) => Promise<SDKResponse<Cart>>;
 
 type GetCartShippingMethodsAction = (
 	query?: GetCartShippingMethodsQuery,
 	options?: {
 		serverOptions?: ServerOptions;
 	}
-) => Promise<SDKResponse<ShippingMethod[]>>; // getShippingMethods
+) => Promise<SDKResponse<ShippingMethod[]>>;
 
 type GetAvailableCartShippingMethodsAction = (options?: {
 	serverOptions?: ServerOptions;
-}) => Promise<SDKResponse<ShippingMethod[]>>; // getAvailableShippingMethods
+}) => Promise<SDKResponse<ShippingMethod[]>>;
 
 type SetCartShippingMethodAction = (
 	payload: SetCartShippingMethodPayload,
 	options?: {
 		serverOptions?: ServerOptions;
 	}
-) => Promise<SDKResponse<Cart>>; // setShippingMethod
+) => Promise<SDKResponse<Cart>>;
 
 type RedeemDiscountCodeAction = (
 	payload: RedeemDiscountCodePayload,
 	options?: {
 		serverOptions?: ServerOptions;
 	}
-) => Promise<SDKResponse<Cart>>; // redeemDiscount
+) => Promise<SDKResponse<Cart>>;
 
 type RemoveDiscountCodeAction = (
 	payload: RemoveDiscountCodePayload,
 	options?: {
 		serverOptions?: ServerOptions;
 	}
-) => Promise<SDKResponse<Cart>>; // removeDiscount
+) => Promise<SDKResponse<Cart>>;
 
 type UpdatePaymentAction = (
 	payload: UpdatePaymentPayload,
 	options?: {
 		serverOptions?: ServerOptions;
 	}
-) => Promise<SDKResponse<Payment>>; // updatePayment
+) => Promise<SDKResponse<Payment>>;
 
 type AddPaymentByInvoiceAction = (
 	payload: AddPaymentByInvoicePayload,
 	options?: {
 		serverOptions?: ServerOptions;
 	}
-) => Promise<SDKResponse<Cart>>; // addPaymentByInvoice
+) => Promise<SDKResponse<Cart>>;
 
 type CheckoutCartAction = (
 	payload: CheckoutCartPayload,
 	options?: {
 		serverOptions?: ServerOptions;
 	}
-) => Promise<SDKResponse<Order>>; // checkout
+) => Promise<SDKResponse<Order>>;
 
 type ReturnOrderItemsAction = (
 	payload: ReturnOrderItemsPayload,
 	options?: {
 		serverOptions?: ServerOptions;
 	}
-) => Promise<SDKResponse<Order>>; // returnItems
+) => Promise<SDKResponse<Order>>;
 
 type CancelOrderAction = (
 	payload: CancelOrderPayload,
 	options?: {
 		serverOptions?: ServerOptions;
 	}
-) => Promise<SDKResponse<Order>>; // cancelOrder
+) => Promise<SDKResponse<Order>>;
 
 type GetOrderHistoryAction = (options?: {
 	serverOptions?: ServerOptions;
-}) => Promise<SDKResponse<Order[]>>; // getOrders
+}) => Promise<SDKResponse<Order[]>>;
 
 export {
-	GetCartAction,
-	UpdateCartAction,
-	ReassignCartAction,
-	ReplicateOrderAction,
-	AddCartItemAction,
-	UpdateCartItemAction,
-	SplitCartItemAction,
-	RemoveCartItemAction,
-	GetCartShippingMethodsAction,
-	GetAvailableCartShippingMethodsAction,
-	SetCartShippingMethodAction,
-	RedeemDiscountCodeAction,
-	RemoveDiscountCodeAction,
-	UpdatePaymentAction,
-	AddPaymentByInvoiceAction,
-	CheckoutCartAction,
-	ReturnOrderItemsAction,
-	CancelOrderAction,
-	GetOrderHistoryAction,
+	type GetCartAction,
+	type UpdateCartAction,
+	type ReassignCartAction,
+	type ReplicateOrderAction,
+	type AddCartItemAction,
+	type UpdateCartItemAction,
+	type SplitCartItemAction,
+	type RemoveCartItemAction,
+	type GetCartShippingMethodsAction,
+	type GetAvailableCartShippingMethodsAction,
+	type SetCartShippingMethodAction,
+	type RedeemDiscountCodeAction,
+	type RemoveDiscountCodeAction,
+	type UpdatePaymentAction,
+	type AddPaymentByInvoiceAction,
+	type CheckoutCartAction,
+	type ReturnOrderItemsAction,
+	type CancelOrderAction,
+	type GetOrderHistoryAction,
 };

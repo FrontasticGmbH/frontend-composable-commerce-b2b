@@ -38,12 +38,12 @@ type RemoveBusinessUnitAddressPayload = {
 };
 
 export {
-	CreateBusinessUnitPayload,
-	UpdateBusinessUnitPayload,
-	AddAssociatePayload,
-	UpdateAssociatePayload,
-	RemoveAssociatePayload,
-	AddBusinessUnitAddressPayload,
-	UpdateBusinessUnitAddressPayload,
-	RemoveBusinessUnitAddressPayload,
+	type CreateBusinessUnitPayload,
+	type UpdateBusinessUnitPayload,
+	type AddAssociatePayload,
+	type UpdateAssociatePayload,
+	type RemoveAssociatePayload,
+	type AddBusinessUnitAddressPayload,
+	type UpdateBusinessUnitAddressPayload,
+	type RemoveBusinessUnitAddressPayload,
 };

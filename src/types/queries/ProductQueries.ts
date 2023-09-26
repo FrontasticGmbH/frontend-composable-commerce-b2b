@@ -17,4 +17,8 @@ type QueryProductCategoriesQuery = {
 	slug?: string;
 };
 
-export { GetProductQuery, ProductQueryQuery, QueryProductCategoriesQuery };
+export {
+	type GetProductQuery,
+	type ProductQueryQuery,
+	type QueryProductCategoriesQuery,
+};

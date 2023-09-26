@@ -10,4 +10,4 @@ type CancelQuoteQuery = {
 	id: string;
 };
 
-export { AcceptQuoteQuery, DeclineQuoteQuery, CancelQuoteQuery };
+export { type AcceptQuoteQuery, type DeclineQuoteQuery, type CancelQuoteQuery };

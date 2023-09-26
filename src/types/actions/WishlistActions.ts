@@ -88,13 +88,13 @@ type RemoveFromWishlistAction = (
 ) => Promise<SDKResponse<Wishlist>>;
 
 export {
-	CreateWishlistAction,
-	GetWishlistAction,
-	GetWishlistsAction,
-	UpdateWishlistAction,
-	ClearWishlistAction,
-	DeleteWishlistAction,
-	AddToWishlistAction,
-	UpdateWishlistItemAction,
-	RemoveFromWishlistAction,
+	type CreateWishlistAction,
+	type GetWishlistAction,
+	type GetWishlistsAction,
+	type UpdateWishlistAction,
+	type ClearWishlistAction,
+	type DeleteWishlistAction,
+	type AddToWishlistAction,
+	type UpdateWishlistItemAction,
+	type RemoveFromWishlistAction,
 };

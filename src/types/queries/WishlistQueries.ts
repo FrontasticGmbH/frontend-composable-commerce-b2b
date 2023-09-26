@@ -45,13 +45,13 @@ type RemoveFromWishlistQuery = {
 };
 
 export {
-	CreateWishlistQuery,
-	GetWishlistQuery,
-	GetWishlistsQuery,
-	UpdateWishlistQuery,
-	ClearWishlistQuery,
-	DeleteWishlistQuery,
-	AddToWishlistQuery,
-	UpdateWishlistItemQuery,
-	RemoveFromWishlistQuery,
+	type CreateWishlistQuery,
+	type GetWishlistQuery,
+	type GetWishlistsQuery,
+	type UpdateWishlistQuery,
+	type ClearWishlistQuery,
+	type DeleteWishlistQuery,
+	type AddToWishlistQuery,
+	type UpdateWishlistItemQuery,
+	type RemoveFromWishlistQuery,
 };

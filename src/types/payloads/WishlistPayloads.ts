@@ -23,9 +23,9 @@ type RemoveFromWishlistPayload = {
 };
 
 export {
-	CreateWishlistPayload,
-	UpdateWishlistPayload,
-	AddToWishlistPayload,
-	UpdateWishlistItemPayload,
-	RemoveFromWishlistPayload,
+	type CreateWishlistPayload,
+	type UpdateWishlistPayload,
+	type AddToWishlistPayload,
+	type UpdateWishlistItemPayload,
+	type RemoveFromWishlistPayload,
 };
