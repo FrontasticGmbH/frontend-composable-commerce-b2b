@@ -1,1 +1,3 @@
-export type ComposableCommerceEventsB2B = {};
+type ComposableCommerceEventsB2B = {};
+
+export { type ComposableCommerceEventsB2B };
