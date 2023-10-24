@@ -19,7 +19,7 @@ export const getProjectActions = (
 				serverOptions: options.serverOptions,
 			});
 
-			if (!response.isError) {
+			if (response.isError === false) {
 				sdk.trigger(
 					new Event({
 						eventName: "projectSettingsFetched",
