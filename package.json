@@ -6,6 +6,7 @@
 	"scripts": {
 		"dev": "tsup --env.NODE_ENV dev",
 		"build": "tsup",
+		"build:non-strict": "tsup --env.NON_STRICT true",
 		"release": "tsup",
 		"prepublishOnly": "rm -rf lib && yarn install && yarn release",
 		"release:types": "tsc --emitDeclarationOnly --outDir lib",
