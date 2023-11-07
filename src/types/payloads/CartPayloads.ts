@@ -10,33 +10,27 @@ type UpdateCartPayload = {
 type ReassignCartPayload = {
 	accountId?: string;
 	email?: string;
-	businessUnitKey?: string;
 };
 
 type ReplicateOrderPayload = {
 	orderId: string;
-	businessUnitKey?: string;
 };
 
 type AddCartItemPayload = {
 	lineItems: LineItem[];
-	businessUnitKey?: string;
 };
 
 type UpdateCartItemPayload = {
 	lineItem: { id: string; count?: number };
-	businessUnitKey?: string;
 };
 
 type SplitCartItemPayload = {
 	lineItemId: string;
-	businessUnitKey?: string;
 	shippingAddresses?: { address: Address; count: number }[];
 };
 
 type RemoveCartItemPayload = {
 	lineItem: { id: string };
-	businessUnitKey?: string;
 };
 type SetCartShippingMethodPayload = {
 	shippingMethod: { id: string };
@@ -60,18 +54,15 @@ type AddPaymentByInvoicePayload = {
 
 type CheckoutCartPayload = {
 	purchaseOrderNumber?: string;
-	businessUnitKey?: string;
 };
 
 type ReturnOrderItemsPayload = {
 	orderId: string;
 	returnLineItems: ReturnLineItem[];
-	businessUnitKey?: string;
 };
 
 type CancelOrderPayload = {
 	orderId: string;
-	businessUnitKey?: string;
 };
 
 export {

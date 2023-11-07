@@ -21,14 +21,38 @@ import {
 	ReturnOrderItemsPayload,
 	CancelOrderPayload,
 } from "../payloads/CartPayloads";
-import { GetCartShippingMethodsQuery } from "../queries/CartQueries";
+import {
+	GetCartQuery,
+	UpdateCartQuery,
+	ReassignCartQuery,
+	ReplicateOrderQuery,
+	AddCartItemQuery,
+	UpdateCartItemQuery,
+	SplitCartItemQuery,
+	RemoveCartItemQuery,
+	GetCartShippingMethodsQuery,
+	GetAvailableCartShippingMethodsQuery,
+	SetCartShippingMethodQuery,
+	RedeemDiscountCodeQuery,
+	RemoveDiscountCodeQuery,
+	UpdatePaymentQuery,
+	AddPaymentByInvoiceQuery,
+	CheckoutCartQuery,
+	ReturnOrderItemsQuery,
+	CancelOrderQuery,
+	GetOrderHistoryQuery,
+} from "../queries/CartQueries";
 
-type GetCartAction = (options?: {
-	serverOptions?: ServerOptions;
-}) => Promise<SDKResponse<Cart>>;
+type GetCartAction = (
+	query?: GetCartQuery,
+	options?: {
+		serverOptions?: ServerOptions;
+	}
+) => Promise<SDKResponse<Cart>>;
 
 type UpdateCartAction = (
 	payload: UpdateCartPayload,
+	query?: UpdateCartQuery,
 	options?: {
 		serverOptions?: ServerOptions;
 	}
@@ -36,17 +60,22 @@ type UpdateCartAction = (
 
 type ReassignCartAction = (
 	payload: ReassignCartPayload,
+	query?: ReassignCartQuery,
 	options?: {
 		serverOptions?: ServerOptions;
 	}
 ) => Promise<SDKResponse<Cart>>;
 
-type ReplicateOrderAction = (options?: {
-	serverOptions?: ServerOptions;
-}) => Promise<SDKResponse<Order>>;
+type ReplicateOrderAction = (
+	query?: ReplicateOrderQuery,
+	options?: {
+		serverOptions?: ServerOptions;
+	}
+) => Promise<SDKResponse<Order>>;
 
 type AddCartItemAction = (
 	payload: AddCartItemPayload,
+	query?: AddCartItemQuery,
 	options?: {
 		serverOptions?: ServerOptions;
 	}
@@ -54,6 +83,7 @@ type AddCartItemAction = (
 
 type UpdateCartItemAction = (
 	payload: UpdateCartItemPayload,
+	query?: UpdateCartItemQuery,
 	options?: {
 		serverOptions?: ServerOptions;
 	}
@@ -61,6 +91,7 @@ type UpdateCartItemAction = (
 
 type SplitCartItemAction = (
 	payload: SplitCartItemPayload,
+	query?: SplitCartItemQuery,
 	options?: {
 		serverOptions?: ServerOptions;
 	}
@@ -68,6 +99,7 @@ type SplitCartItemAction = (
 
 type RemoveCartItemAction = (
 	payload: RemoveCartItemPayload,
+	query?: RemoveCartItemQuery,
 	options?: {
 		serverOptions?: ServerOptions;
 	}
@@ -80,12 +112,16 @@ type GetCartShippingMethodsAction = (
 	}
 ) => Promise<SDKResponse<ShippingMethod[]>>;
 
-type GetAvailableCartShippingMethodsAction = (options?: {
-	serverOptions?: ServerOptions;
-}) => Promise<SDKResponse<ShippingMethod[]>>;
+type GetAvailableCartShippingMethodsAction = (
+	query?: GetAvailableCartShippingMethodsQuery,
+	options?: {
+		serverOptions?: ServerOptions;
+	}
+) => Promise<SDKResponse<ShippingMethod[]>>;
 
 type SetCartShippingMethodAction = (
 	payload: SetCartShippingMethodPayload,
+	query?: SetCartShippingMethodQuery,
 	options?: {
 		serverOptions?: ServerOptions;
 	}
@@ -93,6 +129,7 @@ type SetCartShippingMethodAction = (
 
 type RedeemDiscountCodeAction = (
 	payload: RedeemDiscountCodePayload,
+	query?: RedeemDiscountCodeQuery,
 	options?: {
 		serverOptions?: ServerOptions;
 	}
@@ -100,6 +137,7 @@ type RedeemDiscountCodeAction = (
 
 type RemoveDiscountCodeAction = (
 	payload: RemoveDiscountCodePayload,
+	query?: RemoveDiscountCodeQuery,
 	options?: {
 		serverOptions?: ServerOptions;
 	}
@@ -107,6 +145,7 @@ type RemoveDiscountCodeAction = (
 
 type UpdatePaymentAction = (
 	payload: UpdatePaymentPayload,
+	query?: UpdatePaymentQuery,
 	options?: {
 		serverOptions?: ServerOptions;
 	}
@@ -114,6 +153,7 @@ type UpdatePaymentAction = (
 
 type AddPaymentByInvoiceAction = (
 	payload: AddPaymentByInvoicePayload,
+	query?: AddPaymentByInvoiceQuery,
 	options?: {
 		serverOptions?: ServerOptions;
 	}
@@ -121,6 +161,7 @@ type AddPaymentByInvoiceAction = (
 
 type CheckoutCartAction = (
 	payload: CheckoutCartPayload,
+	query?: CheckoutCartQuery,
 	options?: {
 		serverOptions?: ServerOptions;
 	}
@@ -128,6 +169,7 @@ type CheckoutCartAction = (
 
 type ReturnOrderItemsAction = (
 	payload: ReturnOrderItemsPayload,
+	query?: ReturnOrderItemsQuery,
 	options?: {
 		serverOptions?: ServerOptions;
 	}
@@ -135,14 +177,18 @@ type ReturnOrderItemsAction = (
 
 type CancelOrderAction = (
 	payload: CancelOrderPayload,
+	query?: CancelOrderQuery,
 	options?: {
 		serverOptions?: ServerOptions;
 	}
 ) => Promise<SDKResponse<Order>>;
 
-type GetOrderHistoryAction = (options?: {
-	serverOptions?: ServerOptions;
-}) => Promise<SDKResponse<Order[]>>;
+type GetOrderHistoryAction = (
+	query?: GetOrderHistoryQuery,
+	options?: {
+		serverOptions?: ServerOptions;
+	}
+) => Promise<SDKResponse<Order[]>>;
 
 export {
 	type GetCartAction,
