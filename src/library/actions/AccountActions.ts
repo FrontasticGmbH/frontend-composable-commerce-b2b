@@ -1,6 +1,5 @@
 import {
 	rememberMeCookie,
-	Event,
 	SDK,
 	ServerOptions,
 } from "@commercetools/frontend-sdk";
@@ -80,15 +79,25 @@ export const getAccountActions = (
 		},
 		login: async (
 			payload: LoginAccountPayload,
-			options?: {
+			options: {
 				serverOptions?: ServerOptions;
-			}
+			} = {}
 		) => {
+			const remember = payload.remember;
+			payload.remember = undefined;
+
 			const response = await sdk.callAction<Account>({
 				actionName: "account/login",
 				payload,
 				serverOptions: options?.serverOptions,
 			});
+
+			if (response.isError === false) {
+				if (remember) {
+					rememberMeCookie.set(true, options.serverOptions);
+				}
+			}
+
 			return response;
 		},
 		logout: async (options?: { serverOptions?: ServerOptions }) => {

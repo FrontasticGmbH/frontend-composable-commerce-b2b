@@ -3,6 +3,7 @@ import { Address } from "@commercetools/types/account";
 type LoginAccountPayload = {
 	email: string;
 	password: string;
+	remember?: boolean;
 };
 
 type RegisterAccountPayload = {
