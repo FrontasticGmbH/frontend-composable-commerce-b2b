@@ -14,10 +14,6 @@ type CreateQuoteAction = (
 	}
 ) => Promise<SDKResponse<QuoteRequest>>;
 
-type GetQuotesAction = (options?: {
-	serverOptions?: ServerOptions;
-}) => Promise<SDKResponse<Quote[]>>;
-
 type AcceptQuoteAction = (
 	query: AcceptQuoteQuery,
 	options?: {
@@ -41,7 +37,6 @@ type CancelQuoteAction = (
 
 export {
 	type CreateQuoteAction,
-	type GetQuotesAction,
 	type AcceptQuoteAction,
 	type DeclineQuoteAction,
 	type CancelQuoteAction,
