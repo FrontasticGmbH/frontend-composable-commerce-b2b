@@ -2,4 +2,8 @@ type CreateQuotePayload = {
 	comment: string;
 };
 
-export { type CreateQuotePayload };
+type RenegotiateQuotePayload = {
+	comment: string;
+};
+
+export { type CreateQuotePayload, type RenegotiateQuotePayload };
