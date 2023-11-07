@@ -15,6 +15,7 @@ type QueryProductCategoriesQuery = {
 	cursor?: string;
 	parentId?: string;
 	slug?: string;
+	format?: string;
 };
 
 export {
