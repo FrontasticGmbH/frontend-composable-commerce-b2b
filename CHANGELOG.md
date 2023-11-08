@@ -1,6 +1,8 @@
 
 ## Version 1.1.0 (2023-11-08)
 
+## Version 1.1.0 (2023-11-08)
+
 
 * Updated version
 * Removed sortAttributes until accurate type can be found
