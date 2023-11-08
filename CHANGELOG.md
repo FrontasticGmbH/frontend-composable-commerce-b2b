@@ -1,4 +1,9 @@
 
+## Version 1.1.1 (2023-11-08)
+
+
+* Fixed CHANGELOG.md
+
 ## Version 1.1.0 (2023-11-08)
 
 * Removed sortAttributes until accurate type can be found
