@@ -9,7 +9,7 @@ type QuoteQueryQuery = {
 	cursor?: string;
 	quoteIds?: string[];
 	quoteStates?: QuoteState[] | QuoteRequestState[];
-	sortAttributes?: any; // TODO
+	// sortAttributes?: any; // TODO find accurate type and add
 	query?: string;
 };
 
@@ -18,7 +18,7 @@ type QuoteRequestsQueryQuery = {
 	cursor?: string;
 	quoteIds?: string[];
 	quoteStates?: QuoteState[] | QuoteRequestState[];
-	sortAttributes?: any; // TODO
+	// sortAttributes?: any; // TODO find accurate type and add
 	query?: string;
 };
 
