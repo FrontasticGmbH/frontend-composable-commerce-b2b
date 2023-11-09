@@ -78,7 +78,7 @@ type AddAccountShippingAddressPayload = {
 };
 
 type RemoveAccountAddressPayload = {
-	addressId: string;
+	address: { id: string };
 };
 
 type SetDefaultAccountBillingAddressPayload = {
