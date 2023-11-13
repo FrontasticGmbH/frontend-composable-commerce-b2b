@@ -1,5 +1,10 @@
 import { QuoteRequestState, QuoteState } from "@commercetools/types/quote";
 
+type CreateQuoteQuery = {
+	businessUnitKey: string;
+	storeKey: string;
+};
+
 type AcceptQuoteQuery = {
 	id: string;
 };
@@ -35,6 +40,7 @@ type CancelQuoteQuery = {
 };
 
 export {
+	type CreateQuoteQuery,
 	type AcceptQuoteQuery,
 	type QuoteQueryQuery,
 	type QuoteRequestsQueryQuery,

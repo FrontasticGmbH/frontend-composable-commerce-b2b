@@ -2,8 +2,9 @@ import { Account, Address } from "@commercetools/types/account";
 import { Store } from "@commercetools/types/store/Store";
 
 type CreateBusinessUnitPayload = {
-	account: Account;
-	store: Store;
+	store: {
+		storeId: string;
+	};
 };
 
 type UpdateBusinessUnitPayload = {

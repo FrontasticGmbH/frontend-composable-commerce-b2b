@@ -14,6 +14,7 @@ import {
 	RenegotiateQuotePayload,
 } from "../../types/payloads/QuotePayloads";
 import {
+	CreateQuoteQuery,
 	AcceptQuoteQuery,
 	QuoteQueryQuery,
 	QuoteRequestsQueryQuery,
@@ -39,11 +40,13 @@ export const getQuoteActions = (
 	return {
 		createQuote: async (
 			payload: CreateQuotePayload,
+			query: CreateQuoteQuery,
 			options: { serverOptions?: ServerOptions } = {}
 		) => {
 			const response = await sdk.callAction<QuoteRequest>({
 				actionName: "quote/createQuoteRequest",
 				payload,
+				query,
 				serverOptions: options.serverOptions,
 			});
 			return response;

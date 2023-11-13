@@ -5,6 +5,7 @@ import {
 	RenegotiateQuotePayload,
 } from "../payloads/QuotePayloads";
 import {
+	CreateQuoteQuery,
 	AcceptQuoteQuery,
 	QuoteQueryQuery,
 	QuoteRequestsQueryQuery,
@@ -15,6 +16,7 @@ import {
 
 type CreateQuoteAction = (
 	payload: CreateQuotePayload,
+	query: CreateQuoteQuery,
 	options?: {
 		serverOptions?: ServerOptions;
 	}
