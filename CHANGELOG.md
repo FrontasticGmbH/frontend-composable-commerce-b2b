@@ -1,4 +1,10 @@
 
+## Version 1.1.2 (2023-11-13)
+
+
+* Updated createBusinessUnit and createQuote actions
+* Updated RemoveAccountAddressPayload structure
+
 ## Version 1.1.1 (2023-11-08)
 
 
