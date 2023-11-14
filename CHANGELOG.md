@@ -1,4 +1,10 @@
 
+## Version 1.1.3 (2023-11-14)
+
+
+* Replaced domain types import string
+* Updated return types for quote and quote request queries
+
 ## Version 1.1.2 (2023-11-13)
 
 
