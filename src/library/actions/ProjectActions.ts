@@ -1,4 +1,4 @@
-import { ProjectSettings } from "@commercetools/types/ProjectSettings";
+import { ProjectSettings } from "@shared/types/ProjectSettings";
 import { Event, SDK, ServerOptions } from "@commercetools/frontend-sdk";
 import { GetProjectSettingsAction } from "../../types/actions/ProjectActions";
 import { ComposableCommerceEventsB2B } from "../../types/events/ComposableCommerceEventsB2B";

@@ -39,11 +39,8 @@ import {
 	RemoveBusinessUnitAddressAction,
 } from "../../types/actions/BusinessUnitActions";
 import { ComposableCommerceEventsB2B } from "../../types/events/ComposableCommerceEventsB2B";
-import {
-	AssociateRole,
-	BusinessUnit,
-} from "@commercetools/types/business-unit";
-import { Order } from "@commercetools/types/cart";
+import { AssociateRole, BusinessUnit } from "@shared/types/business-unit";
+import { Order } from "@shared/types/cart";
 
 export type BusinessUnitActions = {
 	getBusinessUnit: GetBusinessUnitAction;

@@ -1,5 +1,5 @@
 import { SDKResponse, ServerOptions } from "@commercetools/frontend-sdk";
-import { Wishlist } from "@commercetools/types/wishlist";
+import { Wishlist } from "@shared/types/wishlist";
 import {
 	CreateWishlistPayload,
 	UpdateWishlistPayload,

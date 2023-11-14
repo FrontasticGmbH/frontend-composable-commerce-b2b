@@ -21,12 +21,7 @@ import {
 	CancelOrderAction,
 	GetOrderHistoryAction,
 } from "../../types/actions/CartActions";
-import {
-	Cart,
-	Order,
-	Payment,
-	ShippingMethod,
-} from "@commercetools/types/cart";
+import { Cart, Order, Payment, ShippingMethod } from "@shared/types/cart";
 import {
 	AddCartItemPayload,
 	AddPaymentByInvoicePayload,

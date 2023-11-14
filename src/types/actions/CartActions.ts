@@ -1,10 +1,5 @@
 import { SDKResponse, ServerOptions } from "@commercetools/frontend-sdk";
-import {
-	Cart,
-	Order,
-	Payment,
-	ShippingMethod,
-} from "@commercetools/types/cart";
+import { Cart, Order, Payment, ShippingMethod } from "@shared/types/cart";
 import {
 	UpdateCartPayload,
 	ReassignCartPayload,

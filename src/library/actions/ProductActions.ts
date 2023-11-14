@@ -11,7 +11,7 @@ import {
 	ProductQueryQuery,
 	QueryProductCategoriesQuery,
 } from "../../types/queries/ProductQueries";
-import { FilterField, Product, Result } from "@commercetools/types/product";
+import { FilterField, Product, Result } from "@shared/types/product";
 
 export type ProductActions = {
 	getProduct: GetProductAction;

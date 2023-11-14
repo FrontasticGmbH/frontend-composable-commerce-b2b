@@ -1,4 +1,4 @@
-import { QuoteRequestState, QuoteState } from "@commercetools/types/quote";
+import { QuoteRequestState, QuoteState } from "@shared/types/quote";
 
 type CreateQuoteQuery = {
 	businessUnitKey: string;

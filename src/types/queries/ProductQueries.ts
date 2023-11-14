@@ -1,4 +1,4 @@
-import { CategoryQuery, ProductQuery } from "@commercetools/types/query";
+import { CategoryQuery, ProductQuery } from "@shared/types/query";
 
 type GetProductQuery = {
 	id?: string;

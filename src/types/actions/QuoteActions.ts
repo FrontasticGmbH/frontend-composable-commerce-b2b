@@ -1,6 +1,6 @@
 import { SDKResponse, ServerOptions } from "@commercetools/frontend-sdk";
-import { Quote, QuoteRequest } from "@commercetools/types/quote";
-import { PaginatedResult } from "@commercetools/types/result";
+import { Quote, QuoteRequest } from "@shared/types/quote";
+import { PaginatedResult } from "@shared/types/result";
 import {
 	CreateQuotePayload,
 	RenegotiateQuotePayload,

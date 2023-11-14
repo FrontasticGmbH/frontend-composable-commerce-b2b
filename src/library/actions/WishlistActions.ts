@@ -29,7 +29,7 @@ import {
 	UpdateWishlistItemAction,
 	RemoveFromWishlistAction,
 } from "../../types/actions/WishlistActions";
-import { Wishlist } from "@commercetools/types/wishlist";
+import { Wishlist } from "@shared/types/wishlist";
 
 export type WishlistActions = {
 	createWishlist: CreateWishlistAction;

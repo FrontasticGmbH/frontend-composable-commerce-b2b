@@ -1,5 +1,5 @@
 import { SDKResponse, ServerOptions } from "@commercetools/frontend-sdk";
-import { FilterField, Product, Result } from "@commercetools/types/product";
+import { FilterField, Product, Result } from "@shared/types/product";
 import {
 	GetProductQuery,
 	ProductQueryQuery,

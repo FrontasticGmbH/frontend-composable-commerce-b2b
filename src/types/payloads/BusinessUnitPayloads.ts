@@ -1,5 +1,5 @@
-import { Account, Address } from "@commercetools/types/account";
-import { Store } from "@commercetools/types/store/Store";
+import { Account, Address } from "@shared/types/account";
+import { Store } from "@shared/types/store/Store";
 
 type CreateBusinessUnitPayload = {
 	store: {

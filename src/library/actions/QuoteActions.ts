@@ -22,8 +22,8 @@ import {
 	RenegotiateQuoteQuery,
 	CancelQuoteQuery,
 } from "../../types/queries/QuoteQueries";
-import { Quote, QuoteRequest } from "@commercetools/types/quote";
-import { PaginatedResult } from "@commercetools/types/result";
+import { Quote, QuoteRequest } from "@shared/types/quote";
+import { PaginatedResult } from "@shared/types/result";
 
 export type QuoteActions = {
 	createQuote: CreateQuoteAction;

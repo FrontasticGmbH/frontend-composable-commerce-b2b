@@ -1,5 +1,5 @@
-import { Address } from "@commercetools/types/account";
-import { LineItem, Payment, ReturnLineItem } from "@commercetools/types/cart";
+import { Address } from "@shared/types/account";
+import { LineItem, Payment, ReturnLineItem } from "@shared/types/cart";
 
 type UpdateCartPayload = {
 	account?: { email: string };

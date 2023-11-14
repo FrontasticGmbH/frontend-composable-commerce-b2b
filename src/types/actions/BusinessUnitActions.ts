@@ -1,9 +1,6 @@
 import { SDKResponse, ServerOptions } from "@commercetools/frontend-sdk";
-import {
-	AssociateRole,
-	BusinessUnit,
-} from "@commercetools/types/business-unit";
-import { Order } from "@commercetools/types/cart";
+import { AssociateRole, BusinessUnit } from "@shared/types/business-unit";
+import { Order } from "@shared/types/cart";
 import {
 	CreateBusinessUnitPayload,
 	AddAssociatePayload,

@@ -43,7 +43,7 @@ import {
 	DeleteAccountPayload,
 } from "../../types/payloads/AccountPayloads";
 import { ComposableCommerceEventsB2B } from "../../types/events/ComposableCommerceEventsB2B";
-import { Account } from "@commercetools/types/account";
+import { Account } from "@shared/types/account";
 
 export type AccountActions = {
 	getAccount: GetAccountAction;

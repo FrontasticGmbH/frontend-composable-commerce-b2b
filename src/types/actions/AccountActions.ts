@@ -1,5 +1,5 @@
 import { SDKResponse, ServerOptions } from "@commercetools/frontend-sdk";
-import { Account } from "@commercetools/types/account";
+import { Account } from "@shared/types/account";
 import {
 	LoginAccountPayload,
 	RegisterAccountPayload,

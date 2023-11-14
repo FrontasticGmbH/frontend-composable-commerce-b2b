@@ -1,4 +1,4 @@
-import { Address } from "@commercetools/types/account";
+import { Address } from "@shared/types/account";
 
 type LoginAccountPayload = {
 	email: string;
