@@ -22,7 +22,8 @@ import {
 	RenegotiateQuoteQuery,
 	CancelQuoteQuery,
 } from "../../types/queries/QuoteQueries";
-import { Quote, QuoteRequest, Result } from "@commercetools/types/quote";
+import { Quote, QuoteRequest } from "@commercetools/types/quote";
+import { PaginatedResult } from "@commercetools/types/result";
 
 export type QuoteActions = {
 	createQuote: CreateQuoteAction;
@@ -55,7 +56,7 @@ export const getQuoteActions = (
 			query: QuoteQueryQuery,
 			options: { serverOptions?: ServerOptions } = {}
 		) => {
-			const response = await sdk.callAction<Result>({
+			const response = await sdk.callAction<PaginatedResult<Quote>>({
 				actionName: "quote/query",
 				query,
 				serverOptions: options.serverOptions,
@@ -66,7 +67,9 @@ export const getQuoteActions = (
 			query: QuoteRequestsQueryQuery,
 			options: { serverOptions?: ServerOptions } = {}
 		) => {
-			const response = await sdk.callAction<Result>({
+			const response = await sdk.callAction<
+				PaginatedResult<QuoteRequest>
+			>({
 				actionName: "quote/queryQuoteRequests",
 				query,
 				serverOptions: options.serverOptions,

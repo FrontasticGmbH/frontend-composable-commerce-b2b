@@ -1,5 +1,6 @@
 import { SDKResponse, ServerOptions } from "@commercetools/frontend-sdk";
-import { Quote, QuoteRequest, Result } from "@commercetools/types/quote";
+import { Quote, QuoteRequest } from "@commercetools/types/quote";
+import { PaginatedResult } from "@commercetools/types/result";
 import {
 	CreateQuotePayload,
 	RenegotiateQuotePayload,
@@ -27,14 +28,14 @@ type QuoteQueryAction = (
 	options?: {
 		serverOptions?: ServerOptions;
 	}
-) => Promise<SDKResponse<Result>>;
+) => Promise<SDKResponse<PaginatedResult<Quote>>>;
 
 type QuoteRequestsQueryAction = (
 	query: QuoteRequestsQueryQuery,
 	options?: {
 		serverOptions?: ServerOptions;
 	}
-) => Promise<SDKResponse<Result>>;
+) => Promise<SDKResponse<PaginatedResult<QuoteRequest>>>;
 
 type AcceptQuoteAction = (
 	query: AcceptQuoteQuery,
