@@ -9,8 +9,8 @@
 		"declaration": true,
 		"outDir": "lib",
 		"paths": {
-			"@commercetools/types/*": ["../../../project-libraries/b2b/types/*"],
-			"@commercetools/types": ["../../../project-libraries/b2b/types"]
+			"@shared/types/*": ["../../../project-libraries/b2b/types/*"],
+			"@shared/types/": ["../../../project-libraries/b2b/types"]
 		}
 	},
 	"exclude": ["node_modules", "lib"]
