@@ -20,6 +20,7 @@ import {
 	ReturnOrderItemsAction,
 	CancelOrderAction,
 	GetOrderHistoryAction,
+	QueryOrdersAction,
 } from "../../types/actions/CartActions";
 import { Cart, Order, Payment, ShippingMethod } from "@shared/types/cart";
 import {
@@ -58,7 +59,9 @@ import {
 	ReturnOrderItemsQuery,
 	CancelOrderQuery,
 	GetOrderHistoryQuery,
+	QueryOrdersQuery,
 } from "../../types/queries/CartQueries";
+import { PaginatedResult } from "@shared/types/result";
 
 export type CartActions = {
 	getCart: GetCartAction;
@@ -80,6 +83,7 @@ export type CartActions = {
 	returnOrderItems: ReturnOrderItemsAction;
 	cancelOrder: CancelOrderAction;
 	getOrderHistory: GetOrderHistoryAction;
+	queryOrders: QueryOrdersAction;
 };
 
 export const getCartActions = (
@@ -346,14 +350,27 @@ export const getCartActions = (
 		},
 		getOrderHistory: async (
 			query?: GetOrderHistoryQuery,
-			options?: {
+			options: {
 				serverOptions?: ServerOptions;
-			}
+			} = {}
 		) => {
 			const response = await sdk.callAction<Order[]>({
 				actionName: "cart/getOrders",
 				query,
-				serverOptions: options?.serverOptions,
+				serverOptions: options.serverOptions,
+			});
+			return response;
+		},
+		queryOrders: async (
+			query?: QueryOrdersQuery,
+			options: {
+				serverOptions?: ServerOptions;
+			} = {}
+		) => {
+			const response = await sdk.callAction<PaginatedResult<Order>>({
+				actionName: "cart/queryOrders",
+				query,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},

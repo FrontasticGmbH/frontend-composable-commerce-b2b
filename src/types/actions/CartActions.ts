@@ -1,5 +1,6 @@
 import { SDKResponse, ServerOptions } from "@commercetools/frontend-sdk";
 import { Cart, Order, Payment, ShippingMethod } from "@shared/types/cart";
+import { PaginatedResult } from "@shared/types/result";
 import {
 	UpdateCartPayload,
 	ReassignCartPayload,
@@ -36,6 +37,7 @@ import {
 	ReturnOrderItemsQuery,
 	CancelOrderQuery,
 	GetOrderHistoryQuery,
+	QueryOrdersQuery,
 } from "../queries/CartQueries";
 
 type GetCartAction = (
@@ -185,6 +187,13 @@ type GetOrderHistoryAction = (
 	}
 ) => Promise<SDKResponse<Order[]>>;
 
+type QueryOrdersAction = (
+	query?: QueryOrdersQuery,
+	options?: {
+		serverOptions?: ServerOptions;
+	}
+) => Promise<SDKResponse<PaginatedResult<Order>>>;
+
 export {
 	type GetCartAction,
 	type UpdateCartAction,
@@ -205,4 +214,5 @@ export {
 	type ReturnOrderItemsAction,
 	type CancelOrderAction,
 	type GetOrderHistoryAction,
+	type QueryOrdersAction,
 };
