@@ -1,4 +1,9 @@
 
+## Version 1.1.5 (2023-11-21)
+
+
+* Added cart.queryOrders action
+
 ## Version 1.1.4 (2023-11-16)
 
 
