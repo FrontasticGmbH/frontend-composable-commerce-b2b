@@ -1,4 +1,9 @@
 
+## Version 1.2.0 (2023-11-28)
+
+
+* Updated @commercetools/frontend-sdk dependency and replaced newly deprecated methods
+
 ## Version 1.1.6 (2023-11-21)
 
 
