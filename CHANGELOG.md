@@ -1,4 +1,9 @@
 
+## Version 1.2.1 (2023-12-04)
+
+
+* Updated RemoveBusinessUnitAddressPayload to simply addressId: string
+
 ## Version 1.2.0 (2023-11-28)
 
 

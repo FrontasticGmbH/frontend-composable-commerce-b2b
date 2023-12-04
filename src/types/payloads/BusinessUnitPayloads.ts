@@ -39,7 +39,7 @@ type UpdateBusinessUnitAddressPayload = {
 };
 
 type RemoveBusinessUnitAddressPayload = {
-	address: Address;
+	addressId: string;
 };
 
 export {
