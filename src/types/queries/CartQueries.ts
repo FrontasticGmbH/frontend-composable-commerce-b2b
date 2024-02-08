@@ -1,4 +1,5 @@
-import { OrderState } from "@shared/types/cart";
+import { OrderState, ShipmentState } from "@shared/types/cart";
+import { OrderQuery } from "@shared/types/query";
 
 type GetCartQuery = {
 	businessUnitKey?: string;
@@ -17,7 +18,6 @@ type ReassignCartQuery = {
 
 type ReplicateOrderQuery = {
 	businessUnitKey?: string;
-	storeKey?: string;
 };
 
 type AddCartItemQuery = {
@@ -87,18 +87,18 @@ type ReturnOrderItemsQuery = {
 };
 
 type CancelOrderQuery = {
-	businessUnitKey?: string;
-	storeKey?: string;
+	businessUnitKey: string;
 };
 
 type QueryOrdersQuery = {
+	businessUnitKey?: string;
 	limit?: number;
 	cursor?: string;
+	accountId?: string;
 	orderIds?: string[];
 	orderNumbers?: string[];
-	orderStates?: OrderState[];
-	// sortAttributes?: any;  // TODO find accurate type and add
-	businessUnitKey?: string;
+	orderState?: OrderState[];
+	shipmentState?: ShipmentState[];
 	query?: string;
 };
 
