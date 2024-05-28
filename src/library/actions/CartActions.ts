@@ -1,7 +1,7 @@
 import { ComposableCommerceEventsB2B } from "../../types/events/ComposableCommerceEventsB2B";
 import { SDK, ServerOptions } from "@commercetools/frontend-sdk";
 import {
-    ClearCartAction,
+	ClearCartAction,
 	GetCartAction,
 	UpdateCartAction,
 	ReassignCartAction,
@@ -64,7 +64,7 @@ import {
 import { PaginatedResult } from "@shared/types/result";
 
 export type CartActions = {
-    clearCart: ClearCartAction;
+	clearCart: ClearCartAction;
 	getCart: GetCartAction;
 	updateCart: UpdateCartAction;
 	reassignCart: ReassignCartAction;
@@ -91,283 +91,369 @@ export const getCartActions = (
 ): CartActions => {
 	return {
 		clearCart: async (
-			options?: { serverOptions?: ServerOptions }
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
+				serverOptions?: ServerOptions;
+			} = {}
 		) => {
 			const response = await sdk.callAction<void>({
 				actionName: "cart/clearCart",
-				serverOptions: options?.serverOptions,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		getCart: async (
 			query?: GetCartQuery,
-			options?: { serverOptions?: ServerOptions }
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
+				serverOptions?: ServerOptions;
+			} = {}
 		) => {
 			const response = await sdk.callAction<Cart>({
 				actionName: "cart/getCart",
-				serverOptions: options?.serverOptions,
 				query,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		updateCart: async (
 			payload: UpdateCartPayload,
 			query?: UpdateCartQuery,
-			options?: {
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
 				serverOptions?: ServerOptions;
-			}
+			} = {}
 		) => {
 			const response = await sdk.callAction<Cart>({
 				actionName: "cart/updateCart",
 				payload,
 				query,
-				serverOptions: options?.serverOptions,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		reassignCart: async (
 			payload: ReassignCartPayload,
 			query?: ReassignCartQuery,
-			options?: {
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
 				serverOptions?: ServerOptions;
-			}
+			} = {}
 		) => {
 			const response = await sdk.callAction<Cart>({
 				actionName: "cart/reassignCart",
 				payload,
 				query,
-				serverOptions: options?.serverOptions,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		replicateOrder: async (
-            payload: ReplicateOrderPayload,
+			payload: ReplicateOrderPayload,
 			query?: ReplicateOrderQuery,
-			options?: { serverOptions?: ServerOptions }
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
+				serverOptions?: ServerOptions;
+			} = {}
 		) => {
 			const response = await sdk.callAction<Cart>({
 				actionName: "cart/replicateOrder",
-                payload,
+				payload,
 				query,
-				serverOptions: options?.serverOptions,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		addItem: async (
 			payload: AddCartItemPayload,
 			query?: AddCartItemQuery,
-			options?: {
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
 				serverOptions?: ServerOptions;
-			}
+			} = {}
 		) => {
 			const response = await sdk.callAction<Cart>({
 				actionName: "cart/addToCart",
 				payload,
 				query,
-				serverOptions: options?.serverOptions,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		updateItem: async (
 			payload: UpdateCartItemPayload,
 			query?: UpdateCartItemQuery,
-			options?: {
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
 				serverOptions?: ServerOptions;
-			}
+			} = {}
 		) => {
 			const response = await sdk.callAction<Cart>({
 				actionName: "cart/updateLineItem",
 				payload,
 				query,
-				serverOptions: options?.serverOptions,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		splitItem: async (
 			payload: SplitCartItemPayload,
 			query?: SplitCartItemQuery,
-			options?: {
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
 				serverOptions?: ServerOptions;
-			}
+			} = {}
 		) => {
 			const response = await sdk.callAction<Cart>({
 				actionName: "cart/splitLineItem",
 				payload,
 				query,
-				serverOptions: options?.serverOptions,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		removeItem: async (
 			payload: RemoveCartItemPayload,
 			query?: RemoveCartItemQuery,
-			options?: {
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
 				serverOptions?: ServerOptions;
-			}
+			} = {}
 		) => {
 			const response = await sdk.callAction<Cart>({
 				actionName: "cart/removeLineItem",
 				payload,
 				query,
-				serverOptions: options?.serverOptions,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		getShippingMethods: async (
 			query?: GetCartShippingMethodsQuery,
-			options?: {
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
 				serverOptions?: ServerOptions;
-			}
+			} = {}
 		) => {
 			const response = await sdk.callAction<ShippingMethod[]>({
 				actionName: "cart/getShippingMethods",
 				query,
-				serverOptions: options?.serverOptions,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		getAvailableShippingMethods: async (
 			query?: GetAvailableCartShippingMethodsQuery,
-			options?: {
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
 				serverOptions?: ServerOptions;
-			}
+			} = {}
 		) => {
 			const response = await sdk.callAction<ShippingMethod[]>({
 				actionName: "cart/getAvailableShippingMethods",
 				query,
-				serverOptions: options?.serverOptions,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		setShippingMethod: async (
 			payload: SetCartShippingMethodPayload,
 			query?: SetCartShippingMethodQuery,
-			options?: {
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
 				serverOptions?: ServerOptions;
-			}
+			} = {}
 		) => {
 			const response = await sdk.callAction<Cart>({
 				actionName: "cart/setShippingMethod",
 				payload,
 				query,
-				serverOptions: options?.serverOptions,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		redeemDiscountCode: async (
 			payload: RedeemDiscountCodePayload,
 			query?: RedeemDiscountCodeQuery,
-			options?: {
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
 				serverOptions?: ServerOptions;
-			}
+			} = {}
 		) => {
 			const response = await sdk.callAction<Cart>({
 				actionName: "cart/redeemDiscount",
 				payload,
 				query,
-				serverOptions: options?.serverOptions,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		removeDiscountCode: async (
 			payload: RemoveDiscountCodePayload,
 			query?: RemoveDiscountCodeQuery,
-			options?: {
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
 				serverOptions?: ServerOptions;
-			}
+			} = {}
 		) => {
 			const response = await sdk.callAction<Cart>({
 				actionName: "cart/removeDiscount",
 				payload,
 				query,
-				serverOptions: options?.serverOptions,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		updatePayment: async (
 			payload: UpdatePaymentPayload,
 			query?: UpdatePaymentQuery,
-			options?: {
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
 				serverOptions?: ServerOptions;
-			}
+			} = {}
 		) => {
 			const response = await sdk.callAction<Payment>({
 				actionName: "cart/updatePayment",
 				payload,
 				query,
-				serverOptions: options?.serverOptions,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		addPaymentByInvoice: async (
 			payload: AddPaymentByInvoicePayload,
 			query?: AddPaymentByInvoiceQuery,
-			options?: {
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
 				serverOptions?: ServerOptions;
-			}
+			} = {}
 		) => {
 			const response = await sdk.callAction<Cart>({
 				actionName: "cart/addPaymentByInvoice",
 				payload,
 				query,
-				serverOptions: options?.serverOptions,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		checkout: async (
 			payload: CheckoutCartPayload,
 			query?: CheckoutCartQuery,
-			options?: {
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
 				serverOptions?: ServerOptions;
-			}
+			} = {}
 		) => {
 			const response = await sdk.callAction<Order>({
 				actionName: "cart/checkout",
 				payload,
 				query,
-				serverOptions: options?.serverOptions,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		returnOrderItems: async (
 			payload: ReturnOrderItemsPayload,
 			query?: ReturnOrderItemsQuery,
-			options?: {
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
 				serverOptions?: ServerOptions;
-			}
+			} = {}
 		) => {
 			const response = await sdk.callAction<Order>({
 				actionName: "cart/returnItems",
 				payload,
 				query,
-				serverOptions: options?.serverOptions,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		cancelOrder: async (
 			payload: CancelOrderPayload,
 			query?: CancelOrderQuery,
-			options?: {
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
 				serverOptions?: ServerOptions;
-			}
+			} = {}
 		) => {
 			const response = await sdk.callAction<Order>({
 				actionName: "cart/cancelOrder",
 				payload,
 				query,
-				serverOptions: options?.serverOptions,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		queryOrders: async (
 			query?: QueryOrdersQuery,
 			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
 				serverOptions?: ServerOptions;
 			} = {}
 		) => {
 			const response = await sdk.callAction<PaginatedResult<Order>>({
 				actionName: "cart/queryOrders",
 				query,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
 				serverOptions: options.serverOptions,
 			});
 			return response;

@@ -9,8 +9,12 @@
 		"declaration": true,
 		"outDir": "lib",
 		"paths": {
-			"@shared/types/*": ["../../../project-libraries/b2b/types/*"],
-			"@shared/types": ["../../../project-libraries/b2b/types"]
+			"@shared/types/*": [
+				"../../../project-libraries/b2b/packages/poc/types/*"
+			],
+			"@shared/types": [
+				"../../../project-libraries/b2b/packages/poc/types"
+			]
 		}
 	},
 	"exclude": ["node_modules", "lib"]

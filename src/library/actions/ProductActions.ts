@@ -2,16 +2,17 @@ import { SDK, ServerOptions } from "@commercetools/frontend-sdk";
 import { ComposableCommerceEventsB2B } from "../../types/events/ComposableCommerceEventsB2B";
 import {
 	GetProductAction,
+	GetSearchableProductAttributesAction,
 	ProductQueryAction,
 	QueryProductCategoriesAction,
-	GetSearchableProductAttributesAction,
 } from "../../types/actions/ProductActions";
 import {
 	GetProductQuery,
 	ProductQueryQuery,
 	QueryProductCategoriesQuery,
 } from "../../types/queries/ProductQueries";
-import { FilterField, Product, Result } from "@shared/types/product";
+import { Category, FilterField, Product } from "@shared/types/product";
+import { PaginatedResult, ProductPaginatedResult } from "@shared/types/result";
 
 export type ProductActions = {
 	getProduct: GetProductAction;
@@ -26,49 +27,67 @@ export const getProductActions = (
 	return {
 		getProduct: async (
 			query: GetProductQuery,
-			options?: {
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
 				serverOptions?: ServerOptions;
-			}
+			} = {}
 		) => {
 			const response = await sdk.callAction<Product>({
 				actionName: "product/getProduct",
 				query,
-				serverOptions: options?.serverOptions,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		query: async (
 			query?: ProductQueryQuery,
-			options?: {
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
 				serverOptions?: ServerOptions;
-			}
+			} = {}
 		) => {
-			const response = await sdk.callAction<Result>({
+			const response = await sdk.callAction<ProductPaginatedResult>({
 				actionName: "product/query",
 				query,
-				serverOptions: options?.serverOptions,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		queryCategories: async (
 			query?: QueryProductCategoriesQuery,
-			options?: {
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
 				serverOptions?: ServerOptions;
-			}
+			} = {}
 		) => {
-			const response = await sdk.callAction<Result>({
+			const response = await sdk.callAction<PaginatedResult<Category>>({
 				actionName: "product/queryCategories",
 				query,
-				serverOptions: options?.serverOptions,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
-		getSearchableAttributes: async (options?: {
-			serverOptions?: ServerOptions;
-		}) => {
+		getSearchableAttributes: async (
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
+				serverOptions?: ServerOptions;
+			} = {}
+		) => {
 			const response = await sdk.callAction<FilterField[]>({
 				actionName: "product/searchableAttributes",
-				serverOptions: options?.serverOptions,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},

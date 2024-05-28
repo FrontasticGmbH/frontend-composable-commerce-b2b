@@ -100,6 +100,7 @@ type QueryOrdersQuery = {
 	orderState?: OrderState[];
 	shipmentState?: ShipmentState[];
 	query?: string;
+	sortAttributes?: any;
 };
 
 export {

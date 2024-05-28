@@ -12,10 +12,16 @@ export const getProjectActions = (
 ): ProjectActions => {
 	return {
 		getSettings: async (
-			options: { serverOptions?: ServerOptions } = {}
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
+				serverOptions?: ServerOptions;
+			} = {}
 		) => {
 			const response = await sdk.callAction<ProjectSettings>({
 				actionName: "project/getProjectSettings",
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
 				serverOptions: options.serverOptions,
 			});
 

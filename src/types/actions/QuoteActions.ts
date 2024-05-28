@@ -19,6 +19,17 @@ type CreateQuoteAction = (
 	payload: CreateQuotePayload,
 	query: CreateQuoteQuery,
 	options?: {
+		/**
+		 * @param {boolean} [options.skipQueue] - An optional boolean, default false. Indicates whether or not to skip the action queue on the coFE base SDK and execute fully asyncronously. May cause race conditions if used incorrectly.
+		 */
+		skipQueue?: boolean;
+		/**
+		 * @param {boolean} [options.customHeaderValue] - An optional string, the value to assign to a "coFE-Custom-Configuration" header value. Overrides customHeaderValue passed in coFE base SDK configure.
+		 */
+		customHeaderValue?: string;
+		/**
+		 * @param {Object} [options.serverOptions] - An optional object containing the res and req objects for ServerResponse and IncomingMessage with cookies respectively. Required for server-side rendering session management.
+		 */
 		serverOptions?: ServerOptions;
 	}
 ) => Promise<SDKResponse<QuoteRequest>>;
@@ -26,6 +37,17 @@ type CreateQuoteAction = (
 type QuoteQueryAction = (
 	query: QuoteQueryQuery,
 	options?: {
+		/**
+		 * @param {boolean} [options.skipQueue] - An optional boolean, default false. Indicates whether or not to skip the action queue on the coFE base SDK and execute fully asyncronously. May cause race conditions if used incorrectly.
+		 */
+		skipQueue?: boolean;
+		/**
+		 * @param {boolean} [options.customHeaderValue] - An optional string, the value to assign to a "coFE-Custom-Configuration" header value. Overrides customHeaderValue passed in coFE base SDK configure.
+		 */
+		customHeaderValue?: string;
+		/**
+		 * @param {Object} [options.serverOptions] - An optional object containing the res and req objects for ServerResponse and IncomingMessage with cookies respectively. Required for server-side rendering session management.
+		 */
 		serverOptions?: ServerOptions;
 	}
 ) => Promise<SDKResponse<PaginatedResult<Quote>>>;
@@ -33,6 +55,17 @@ type QuoteQueryAction = (
 type QuoteRequestsQueryAction = (
 	query: QuoteRequestsQueryQuery,
 	options?: {
+		/**
+		 * @param {boolean} [options.skipQueue] - An optional boolean, default false. Indicates whether or not to skip the action queue on the coFE base SDK and execute fully asyncronously. May cause race conditions if used incorrectly.
+		 */
+		skipQueue?: boolean;
+		/**
+		 * @param {boolean} [options.customHeaderValue] - An optional string, the value to assign to a "coFE-Custom-Configuration" header value. Overrides customHeaderValue passed in coFE base SDK configure.
+		 */
+		customHeaderValue?: string;
+		/**
+		 * @param {Object} [options.serverOptions] - An optional object containing the res and req objects for ServerResponse and IncomingMessage with cookies respectively. Required for server-side rendering session management.
+		 */
 		serverOptions?: ServerOptions;
 	}
 ) => Promise<SDKResponse<PaginatedResult<QuoteRequest>>>;
@@ -40,6 +73,17 @@ type QuoteRequestsQueryAction = (
 type AcceptQuoteAction = (
 	query: AcceptQuoteQuery,
 	options?: {
+		/**
+		 * @param {boolean} [options.skipQueue] - An optional boolean, default false. Indicates whether or not to skip the action queue on the coFE base SDK and execute fully asyncronously. May cause race conditions if used incorrectly.
+		 */
+		skipQueue?: boolean;
+		/**
+		 * @param {boolean} [options.customHeaderValue] - An optional string, the value to assign to a "coFE-Custom-Configuration" header value. Overrides customHeaderValue passed in coFE base SDK configure.
+		 */
+		customHeaderValue?: string;
+		/**
+		 * @param {Object} [options.serverOptions] - An optional object containing the res and req objects for ServerResponse and IncomingMessage with cookies respectively. Required for server-side rendering session management.
+		 */
 		serverOptions?: ServerOptions;
 	}
 ) => Promise<SDKResponse<Quote>>;
@@ -47,6 +91,17 @@ type AcceptQuoteAction = (
 type DeclineQuoteAction = (
 	query: DeclineQuoteQuery,
 	options?: {
+		/**
+		 * @param {boolean} [options.skipQueue] - An optional boolean, default false. Indicates whether or not to skip the action queue on the coFE base SDK and execute fully asyncronously. May cause race conditions if used incorrectly.
+		 */
+		skipQueue?: boolean;
+		/**
+		 * @param {boolean} [options.customHeaderValue] - An optional string, the value to assign to a "coFE-Custom-Configuration" header value. Overrides customHeaderValue passed in coFE base SDK configure.
+		 */
+		customHeaderValue?: string;
+		/**
+		 * @param {Object} [options.serverOptions] - An optional object containing the res and req objects for ServerResponse and IncomingMessage with cookies respectively. Required for server-side rendering session management.
+		 */
 		serverOptions?: ServerOptions;
 	}
 ) => Promise<SDKResponse<Quote>>;
@@ -55,6 +110,17 @@ type RenegotiateQuoteAction = (
 	payload: RenegotiateQuotePayload,
 	query: RenegotiateQuoteQuery,
 	options?: {
+		/**
+		 * @param {boolean} [options.skipQueue] - An optional boolean, default false. Indicates whether or not to skip the action queue on the coFE base SDK and execute fully asyncronously. May cause race conditions if used incorrectly.
+		 */
+		skipQueue?: boolean;
+		/**
+		 * @param {boolean} [options.customHeaderValue] - An optional string, the value to assign to a "coFE-Custom-Configuration" header value. Overrides customHeaderValue passed in coFE base SDK configure.
+		 */
+		customHeaderValue?: string;
+		/**
+		 * @param {Object} [options.serverOptions] - An optional object containing the res and req objects for ServerResponse and IncomingMessage with cookies respectively. Required for server-side rendering session management.
+		 */
 		serverOptions?: ServerOptions;
 	}
 ) => Promise<SDKResponse<Quote>>;
@@ -62,6 +128,17 @@ type RenegotiateQuoteAction = (
 type CancelQuoteAction = (
 	query: CancelQuoteQuery,
 	options?: {
+		/**
+		 * @param {boolean} [options.skipQueue] - An optional boolean, default false. Indicates whether or not to skip the action queue on the coFE base SDK and execute fully asyncronously. May cause race conditions if used incorrectly.
+		 */
+		skipQueue?: boolean;
+		/**
+		 * @param {boolean} [options.customHeaderValue] - An optional string, the value to assign to a "coFE-Custom-Configuration" header value. Overrides customHeaderValue passed in coFE base SDK configure.
+		 */
+		customHeaderValue?: string;
+		/**
+		 * @param {Object} [options.serverOptions] - An optional object containing the res and req objects for ServerResponse and IncomingMessage with cookies respectively. Required for server-side rendering session management.
+		 */
 		serverOptions?: ServerOptions;
 	}
 ) => Promise<SDKResponse<QuoteRequest>>;

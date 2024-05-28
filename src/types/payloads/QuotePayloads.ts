@@ -1,5 +1,6 @@
 type CreateQuotePayload = {
 	comment: string;
+	purchaseOrderNumber?: string;
 };
 
 type RenegotiateQuotePayload = {

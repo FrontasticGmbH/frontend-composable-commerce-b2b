@@ -7,21 +7,17 @@ type GetWishlistQuery = {
 };
 
 type QueryWishlistsQuery = {
-    name?: string;
-    accountId: string;
-    limit?: number;
-    cursor?: string;
-    storeKey?: string;
-    wishlistIds?: string[];
-    query?: string;
+	name?: string;
+	accountId: string;
+	limit?: number;
+	cursor?: string;
+	storeKey?: string;
+	wishlistIds?: string[];
+	query?: string;
 };
 
 type UpdateWishlistQuery = {
 	id?: string;
-};
-
-type ClearWishlistQuery = {
-	wishlistId?: string;
 };
 
 type DeleteWishlistQuery = {
@@ -53,9 +49,8 @@ type RemoveFromWishlistQuery = {
 export {
 	type CreateWishlistQuery,
 	type GetWishlistQuery,
-    type QueryWishlistsQuery,
+	type QueryWishlistsQuery,
 	type UpdateWishlistQuery,
-	type ClearWishlistQuery,
 	type DeleteWishlistQuery,
 	type AddToWishlistQuery,
 	type UpdateWishlistItemQuery,

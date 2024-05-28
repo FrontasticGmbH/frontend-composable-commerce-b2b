@@ -42,58 +42,88 @@ export const getQuoteActions = (
 		createQuote: async (
 			payload: CreateQuotePayload,
 			query: CreateQuoteQuery,
-			options: { serverOptions?: ServerOptions } = {}
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
+				serverOptions?: ServerOptions;
+			} = {}
 		) => {
 			const response = await sdk.callAction<QuoteRequest>({
 				actionName: "quote/createQuoteRequest",
 				payload,
 				query,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
 				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		query: async (
 			query: QuoteQueryQuery,
-			options: { serverOptions?: ServerOptions } = {}
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
+				serverOptions?: ServerOptions;
+			} = {}
 		) => {
 			const response = await sdk.callAction<PaginatedResult<Quote>>({
 				actionName: "quote/query",
 				query,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
 				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		queryRequests: async (
 			query: QuoteRequestsQueryQuery,
-			options: { serverOptions?: ServerOptions } = {}
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
+				serverOptions?: ServerOptions;
+			} = {}
 		) => {
 			const response = await sdk.callAction<
 				PaginatedResult<QuoteRequest>
 			>({
 				actionName: "quote/queryQuoteRequests",
 				query,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
 				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		acceptQuote: async (
 			query: AcceptQuoteQuery,
-			options: { serverOptions?: ServerOptions } = {}
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
+				serverOptions?: ServerOptions;
+			} = {}
 		) => {
 			const response = await sdk.callAction<Quote>({
 				actionName: "quote/acceptQuote",
 				query,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
 				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		declineQuote: async (
 			query: DeclineQuoteQuery,
-			options: { serverOptions?: ServerOptions } = {}
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
+				serverOptions?: ServerOptions;
+			} = {}
 		) => {
 			const response = await sdk.callAction<Quote>({
 				actionName: "quote/declineQuote",
 				query,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
 				serverOptions: options.serverOptions,
 			});
 			return response;
@@ -101,23 +131,35 @@ export const getQuoteActions = (
 		renegotiateQuote: async (
 			payload: RenegotiateQuotePayload,
 			query: RenegotiateQuoteQuery,
-			options: { serverOptions?: ServerOptions } = {}
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
+				serverOptions?: ServerOptions;
+			} = {}
 		) => {
 			const response = await sdk.callAction<Quote>({
 				actionName: "quote/renegotiateQuote",
 				payload,
 				query,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
 				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		cancelQuote: async (
 			query: CancelQuoteQuery,
-			options: { serverOptions?: ServerOptions } = {}
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
+				serverOptions?: ServerOptions;
+			} = {}
 		) => {
 			const response = await sdk.callAction<QuoteRequest>({
 				actionName: "quote/cancelQuoteRequest",
 				query,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
 				serverOptions: options.serverOptions,
 			});
 			return response;

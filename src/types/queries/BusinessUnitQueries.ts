@@ -1,58 +1,63 @@
 type GetBusinessUnitQuery = {
-  businessUnitKey: string;
+	businessUnitKey: string;
 };
 
 type GetBusinessUnitsQuery = {
-  expandStores?: boolean;
+	expandStores?: boolean;
 };
 
 type UpdateBusinessUnitQuery = {
-  businessUnitKey: string;
+	businessUnitKey: string;
+};
+
+type GetAssociateQuery = {
+	businessUnitKey: string;
 };
 
 type AddAssociateQuery = {
-  businessUnitKey: string;
+	businessUnitKey: string;
 };
 
 type UpdateAssociateQuery = {
-  businessUnitKey: string;
+	businessUnitKey: string;
 };
 
 type RemoveAssociateQuery = {
-  businessUnitKey: string;
+	businessUnitKey: string;
 };
 
 type GetBusinessUnitOrdersQuery = {
-  businessUnitKey: string;
+	businessUnitKey: string;
 };
 
 type AddBusinessUnitAddressQuery = {
-  businessUnitKey: string;
+	businessUnitKey: string;
 };
 
 type UpdateBusinessUnitAddressQuery = {
-  businessUnitKey: string;
+	businessUnitKey: string;
 };
 
 type RemoveBusinessUnitAddressQuery = {
-  businessUnitKey: string;
+	businessUnitKey: string;
 };
 
 type SetBusinessUnitAndStoreKeysQuery = {
-  businessUnitKey: string;
-  storeKey: string;
+	businessUnitKey: string;
+	storeKey: string;
 };
 
 export {
-  type GetBusinessUnitQuery,
-  type GetBusinessUnitsQuery,
-  type UpdateBusinessUnitQuery,
-  type AddAssociateQuery,
-  type UpdateAssociateQuery,
-  type RemoveAssociateQuery,
-  type GetBusinessUnitOrdersQuery,
-  type AddBusinessUnitAddressQuery,
-  type UpdateBusinessUnitAddressQuery,
-  type RemoveBusinessUnitAddressQuery,
-  type SetBusinessUnitAndStoreKeysQuery,
+	type GetBusinessUnitQuery,
+	type GetBusinessUnitsQuery,
+	type UpdateBusinessUnitQuery,
+	type GetAssociateQuery,
+	type AddAssociateQuery,
+	type UpdateAssociateQuery,
+	type RemoveAssociateQuery,
+	type GetBusinessUnitOrdersQuery,
+	type AddBusinessUnitAddressQuery,
+	type UpdateBusinessUnitAddressQuery,
+	type RemoveBusinessUnitAddressQuery,
+	type SetBusinessUnitAndStoreKeysQuery,
 };

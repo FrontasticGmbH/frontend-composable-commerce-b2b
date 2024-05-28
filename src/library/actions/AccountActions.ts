@@ -44,7 +44,11 @@ import {
 } from "../../types/payloads/AccountPayloads";
 import { ComposableCommerceEventsB2B } from "../../types/events/ComposableCommerceEventsB2B";
 import { Account } from "@shared/types/account";
-import { LoginAccountQuery, RegisterAccountQuery, RequestAccountConfirmationEmailQuery  } from "../../types/queries/AccountQueries";
+import {
+	LoginAccountQuery,
+	RegisterAccountQuery,
+	RequestAccountConfirmationEmailQuery,
+} from "../../types/queries/AccountQueries";
 
 export type AccountActions = {
 	getAccount: GetAccountAction;
@@ -71,17 +75,27 @@ export const getAccountActions = (
 	sdk: SDK<ComposableCommerceEventsB2B>
 ): AccountActions => {
 	return {
-		getAccount: async (options?: { serverOptions?: ServerOptions }) => {
+		getAccount: async (
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
+				serverOptions?: ServerOptions;
+			} = {}
+		) => {
 			const response = await sdk.callAction<GetAccountActionReturn>({
 				actionName: "account/getAccount",
-				serverOptions: options?.serverOptions,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		login: async (
 			payload: LoginAccountPayload,
-            query?: LoginAccountQuery,
+			query?: LoginAccountQuery,
 			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
 				serverOptions?: ServerOptions;
 			} = {}
 		) => {
@@ -91,8 +105,10 @@ export const getAccountActions = (
 			const response = await sdk.callAction<Account>({
 				actionName: "account/login",
 				payload,
-                query,
-				serverOptions: options?.serverOptions,
+				query,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 
 			if (response.isError === false) {
@@ -106,10 +122,18 @@ export const getAccountActions = (
 
 			return response;
 		},
-		logout: async (options: { serverOptions?: ServerOptions } = {}) => {
+		logout: async (
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
+				serverOptions?: ServerOptions;
+			} = {}
+		) => {
 			const response = await sdk.callAction<void>({
 				actionName: "account/logout",
-				serverOptions: options?.serverOptions,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			if (response.isError === false) {
 				await rememberMeCookieAsync.remove(options.serverOptions);
@@ -118,200 +142,260 @@ export const getAccountActions = (
 		},
 		register: async (
 			payload: RegisterAccountPayload,
-            query?: RegisterAccountQuery,
-			options?: {
+			query?: RegisterAccountQuery,
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
 				serverOptions?: ServerOptions;
-			}
+			} = {}
 		) => {
 			const response = await sdk.callAction<Account>({
 				actionName: "account/register",
 				payload,
-                query,
-				serverOptions: options?.serverOptions,
+				query,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		confirm: async (
 			payload: ConfirmAccountPayload,
-			options?: {
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
 				serverOptions?: ServerOptions;
-			}
+			} = {}
 		) => {
 			const response = await sdk.callAction<Account>({
 				actionName: "account/confirm",
 				payload,
-				serverOptions: options?.serverOptions,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		requestConfirmationEmail: async (
 			payload: RequestAccountConfirmationEmailPayload,
-            query?: RequestAccountConfirmationEmailQuery,
-			options?: {
+			query?: RequestAccountConfirmationEmailQuery,
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
 				serverOptions?: ServerOptions;
-			}
+			} = {}
 		) => {
 			const response = await sdk.callAction<void>({
 				actionName: "account/requestConfirmationEmail",
 				payload,
-                query,
-				serverOptions: options?.serverOptions,
+				query,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		changePassword: async (
 			payload: ChangeAccountPasswordPayload,
-			options?: {
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
 				serverOptions?: ServerOptions;
-			}
+			} = {}
 		) => {
 			const response = await sdk.callAction<Account>({
 				actionName: "account/password",
 				payload,
-				serverOptions: options?.serverOptions,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		requestPasswordReset: async (
 			payload: RequestAccountPasswordResetPayload,
-			options?: {
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
 				serverOptions?: ServerOptions;
-			}
+			} = {}
 		) => {
 			const response = await sdk.callAction<void>({
 				actionName: "account/requestReset",
 				payload,
-				serverOptions: options?.serverOptions,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		resetPassword: async (
 			payload: ResetAccountPasswordPayload,
-			options?: {
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
 				serverOptions?: ServerOptions;
-			}
+			} = {}
 		) => {
 			const response = await sdk.callAction<Account>({
 				actionName: "account/reset",
 				payload,
-				serverOptions: options?.serverOptions,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		updateAccount: async (
 			payload: UpdateAccountPayload,
-			options?: {
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
 				serverOptions?: ServerOptions;
-			}
+			} = {}
 		) => {
 			const response = await sdk.callAction<Account>({
 				actionName: "account/update",
 				payload,
-				serverOptions: options?.serverOptions,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		addAddress: async (
 			payload: AddAccountAddressPayload,
-			options?: {
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
 				serverOptions?: ServerOptions;
-			}
+			} = {}
 		) => {
 			const response = await sdk.callAction<Account>({
 				actionName: "account/addAddress",
 				payload,
-				serverOptions: options?.serverOptions,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		updateAddress: async (
 			payload: UpdateAccountAddressPayload,
-			options?: {
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
 				serverOptions?: ServerOptions;
-			}
+			} = {}
 		) => {
 			const response = await sdk.callAction<Account>({
 				actionName: "account/updateAddress",
 				payload,
-				serverOptions: options?.serverOptions,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		addBillingAddress: async (
 			payload: AddAccountBillingAddressPayload,
-			options?: {
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
 				serverOptions?: ServerOptions;
-			}
+			} = {}
 		) => {
 			const response = await sdk.callAction<Account>({
 				actionName: "account/addBillingAddress",
 				payload,
-				serverOptions: options?.serverOptions,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		addShippingAddress: async (
 			payload: AddAccountShippingAddressPayload,
-			options?: {
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
 				serverOptions?: ServerOptions;
-			}
+			} = {}
 		) => {
 			const response = await sdk.callAction<Account>({
 				actionName: "account/addShippingAddress",
 				payload,
-				serverOptions: options?.serverOptions,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		removeAddress: async (
 			payload: RemoveAccountAddressPayload,
-			options?: {
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
 				serverOptions?: ServerOptions;
-			}
+			} = {}
 		) => {
 			const response = await sdk.callAction<Account>({
 				actionName: "account/removeAddress",
 				payload,
-				serverOptions: options?.serverOptions,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		setDefaultBillingAddress: async (
 			payload: SetDefaultAccountBillingAddressPayload,
-			options?: {
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
 				serverOptions?: ServerOptions;
-			}
+			} = {}
 		) => {
 			const response = await sdk.callAction<Account>({
 				actionName: "account/setDefaultBillingAddress",
 				payload,
-				serverOptions: options?.serverOptions,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		setDefaultShippingAddress: async (
 			payload: SetDefaultAccountShippingAddressPayload,
-			options?: {
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
 				serverOptions?: ServerOptions;
-			}
+			} = {}
 		) => {
 			const response = await sdk.callAction<Account>({
 				actionName: "account/setDefaultShippingAddress",
 				payload,
-				serverOptions: options?.serverOptions,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},
 		deleteAccount: async (
 			payload: DeleteAccountPayload,
-			options?: {
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
 				serverOptions?: ServerOptions;
-			}
+			} = {}
 		) => {
 			const response = await sdk.callAction<void>({
 				actionName: "account/deleteAccount",
 				payload,
-				serverOptions: options?.serverOptions,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
 			});
 			return response;
 		},

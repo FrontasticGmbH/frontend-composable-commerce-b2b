@@ -14,10 +14,10 @@ type AddToWishlistPayload = {
 };
 
 type AddToWishlistsPayload = {
-    wishlistIds: string[];
-    variant?: { sku?: string };
-    count?: number;
-}
+	wishlistIds: string[];
+	variant?: { sku?: string };
+	count?: number;
+};
 
 type UpdateWishlistItemPayload = {
 	lineItem: { id: string };
@@ -28,11 +28,16 @@ type RemoveFromWishlistPayload = {
 	lineItem: { id: string };
 };
 
+type RemoveFromWishlistsPayload = {
+	items: { lineItemId: string; wishlistId: string }[];
+};
+
 export {
 	type CreateWishlistPayload,
 	type UpdateWishlistPayload,
 	type AddToWishlistPayload,
-    type AddToWishlistsPayload,
+	type AddToWishlistsPayload,
 	type UpdateWishlistItemPayload,
 	type RemoveFromWishlistPayload,
+	type RemoveFromWishlistsPayload,
 };

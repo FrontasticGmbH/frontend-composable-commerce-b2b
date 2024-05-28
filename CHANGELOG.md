@@ -1,9 +1,20 @@
 
+## Version 3.0.0 (2024-05-28)
+
+
+* refactor: fixed formatting with prettier
+* feat: Added skipQueue and customHeaderValue options to SDK integration actions
+* feat: Updated @commercetools/frontend-sdk dependency to 1.12.1
+* refactor: modify project library paths on missing files
+* feat: deprecate Result type in SDK
+* feat: used default store for business unit creation
+* Added quote.getQuotationCart action
+
 ## Version 2.0.1 (2024-02-08)
 
+* Fixed linting issue
+
 ## Version 2.0.0 (2024-02-08)
-
-
 
 * Added addToWishlists action
 * Updates for endpoint renames, added required payload to replicateOrder action
@@ -11,7 +22,6 @@
 * Improved accuracy of cancel order query type
 * Added clear cart action
 * Added action to set business unit and store keys to session
-
 * Updated businessUnitKey requirements and syntax in Account, BusniessUnit, Cart and Quote queries
 
 ## Version 1.2.3 (2024-01-25)

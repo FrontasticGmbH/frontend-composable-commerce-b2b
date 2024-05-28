@@ -4,7 +4,7 @@ import { PaginatedResult } from "@shared/types/result";
 import {
 	UpdateCartPayload,
 	ReassignCartPayload,
-    ReplicateOrderPayload,
+	ReplicateOrderPayload,
 	AddCartItemPayload,
 	UpdateCartItemPayload,
 	SplitCartItemPayload,
@@ -40,15 +40,35 @@ import {
 	QueryOrdersQuery,
 } from "../queries/CartQueries";
 
-type ClearCartAction = (
-	options?: {
-		serverOptions?: ServerOptions;
-	}
-) => Promise<SDKResponse<void>>;
+type ClearCartAction = (options?: {
+	/**
+	 * @param {boolean} [options.skipQueue] - An optional boolean, default false. Indicates whether or not to skip the action queue on the coFE base SDK and execute fully asyncronously. May cause race conditions if used incorrectly.
+	 */
+	skipQueue?: boolean;
+	/**
+	 * @param {boolean} [options.customHeaderValue] - An optional string, the value to assign to a "coFE-Custom-Configuration" header value. Overrides customHeaderValue passed in coFE base SDK configure.
+	 */
+	customHeaderValue?: string;
+	/**
+	 * @param {Object} [options.serverOptions] - An optional object containing the res and req objects for ServerResponse and IncomingMessage with cookies respectively. Required for server-side rendering session management.
+	 */
+	serverOptions?: ServerOptions;
+}) => Promise<SDKResponse<void>>;
 
 type GetCartAction = (
 	query?: GetCartQuery,
 	options?: {
+		/**
+		 * @param {boolean} [options.skipQueue] - An optional boolean, default false. Indicates whether or not to skip the action queue on the coFE base SDK and execute fully asyncronously. May cause race conditions if used incorrectly.
+		 */
+		skipQueue?: boolean;
+		/**
+		 * @param {boolean} [options.customHeaderValue] - An optional string, the value to assign to a "coFE-Custom-Configuration" header value. Overrides customHeaderValue passed in coFE base SDK configure.
+		 */
+		customHeaderValue?: string;
+		/**
+		 * @param {Object} [options.serverOptions] - An optional object containing the res and req objects for ServerResponse and IncomingMessage with cookies respectively. Required for server-side rendering session management.
+		 */
 		serverOptions?: ServerOptions;
 	}
 ) => Promise<SDKResponse<Cart>>;
@@ -57,6 +77,17 @@ type UpdateCartAction = (
 	payload: UpdateCartPayload,
 	query?: UpdateCartQuery,
 	options?: {
+		/**
+		 * @param {boolean} [options.skipQueue] - An optional boolean, default false. Indicates whether or not to skip the action queue on the coFE base SDK and execute fully asyncronously. May cause race conditions if used incorrectly.
+		 */
+		skipQueue?: boolean;
+		/**
+		 * @param {boolean} [options.customHeaderValue] - An optional string, the value to assign to a "coFE-Custom-Configuration" header value. Overrides customHeaderValue passed in coFE base SDK configure.
+		 */
+		customHeaderValue?: string;
+		/**
+		 * @param {Object} [options.serverOptions] - An optional object containing the res and req objects for ServerResponse and IncomingMessage with cookies respectively. Required for server-side rendering session management.
+		 */
 		serverOptions?: ServerOptions;
 	}
 ) => Promise<SDKResponse<Cart>>;
@@ -65,14 +96,36 @@ type ReassignCartAction = (
 	payload: ReassignCartPayload,
 	query?: ReassignCartQuery,
 	options?: {
+		/**
+		 * @param {boolean} [options.skipQueue] - An optional boolean, default false. Indicates whether or not to skip the action queue on the coFE base SDK and execute fully asyncronously. May cause race conditions if used incorrectly.
+		 */
+		skipQueue?: boolean;
+		/**
+		 * @param {boolean} [options.customHeaderValue] - An optional string, the value to assign to a "coFE-Custom-Configuration" header value. Overrides customHeaderValue passed in coFE base SDK configure.
+		 */
+		customHeaderValue?: string;
+		/**
+		 * @param {Object} [options.serverOptions] - An optional object containing the res and req objects for ServerResponse and IncomingMessage with cookies respectively. Required for server-side rendering session management.
+		 */
 		serverOptions?: ServerOptions;
 	}
 ) => Promise<SDKResponse<Cart>>;
 
 type ReplicateOrderAction = (
-    payload: ReplicateOrderPayload,
+	payload: ReplicateOrderPayload,
 	query?: ReplicateOrderQuery,
 	options?: {
+		/**
+		 * @param {boolean} [options.skipQueue] - An optional boolean, default false. Indicates whether or not to skip the action queue on the coFE base SDK and execute fully asyncronously. May cause race conditions if used incorrectly.
+		 */
+		skipQueue?: boolean;
+		/**
+		 * @param {boolean} [options.customHeaderValue] - An optional string, the value to assign to a "coFE-Custom-Configuration" header value. Overrides customHeaderValue passed in coFE base SDK configure.
+		 */
+		customHeaderValue?: string;
+		/**
+		 * @param {Object} [options.serverOptions] - An optional object containing the res and req objects for ServerResponse and IncomingMessage with cookies respectively. Required for server-side rendering session management.
+		 */
 		serverOptions?: ServerOptions;
 	}
 ) => Promise<SDKResponse<Order>>;
@@ -81,6 +134,17 @@ type AddCartItemAction = (
 	payload: AddCartItemPayload,
 	query?: AddCartItemQuery,
 	options?: {
+		/**
+		 * @param {boolean} [options.skipQueue] - An optional boolean, default false. Indicates whether or not to skip the action queue on the coFE base SDK and execute fully asyncronously. May cause race conditions if used incorrectly.
+		 */
+		skipQueue?: boolean;
+		/**
+		 * @param {boolean} [options.customHeaderValue] - An optional string, the value to assign to a "coFE-Custom-Configuration" header value. Overrides customHeaderValue passed in coFE base SDK configure.
+		 */
+		customHeaderValue?: string;
+		/**
+		 * @param {Object} [options.serverOptions] - An optional object containing the res and req objects for ServerResponse and IncomingMessage with cookies respectively. Required for server-side rendering session management.
+		 */
 		serverOptions?: ServerOptions;
 	}
 ) => Promise<SDKResponse<Cart>>;
@@ -89,6 +153,17 @@ type UpdateCartItemAction = (
 	payload: UpdateCartItemPayload,
 	query?: UpdateCartItemQuery,
 	options?: {
+		/**
+		 * @param {boolean} [options.skipQueue] - An optional boolean, default false. Indicates whether or not to skip the action queue on the coFE base SDK and execute fully asyncronously. May cause race conditions if used incorrectly.
+		 */
+		skipQueue?: boolean;
+		/**
+		 * @param {boolean} [options.customHeaderValue] - An optional string, the value to assign to a "coFE-Custom-Configuration" header value. Overrides customHeaderValue passed in coFE base SDK configure.
+		 */
+		customHeaderValue?: string;
+		/**
+		 * @param {Object} [options.serverOptions] - An optional object containing the res and req objects for ServerResponse and IncomingMessage with cookies respectively. Required for server-side rendering session management.
+		 */
 		serverOptions?: ServerOptions;
 	}
 ) => Promise<SDKResponse<Cart>>;
@@ -97,6 +172,17 @@ type SplitCartItemAction = (
 	payload: SplitCartItemPayload,
 	query?: SplitCartItemQuery,
 	options?: {
+		/**
+		 * @param {boolean} [options.skipQueue] - An optional boolean, default false. Indicates whether or not to skip the action queue on the coFE base SDK and execute fully asyncronously. May cause race conditions if used incorrectly.
+		 */
+		skipQueue?: boolean;
+		/**
+		 * @param {boolean} [options.customHeaderValue] - An optional string, the value to assign to a "coFE-Custom-Configuration" header value. Overrides customHeaderValue passed in coFE base SDK configure.
+		 */
+		customHeaderValue?: string;
+		/**
+		 * @param {Object} [options.serverOptions] - An optional object containing the res and req objects for ServerResponse and IncomingMessage with cookies respectively. Required for server-side rendering session management.
+		 */
 		serverOptions?: ServerOptions;
 	}
 ) => Promise<SDKResponse<Cart>>;
@@ -105,6 +191,17 @@ type RemoveCartItemAction = (
 	payload: RemoveCartItemPayload,
 	query?: RemoveCartItemQuery,
 	options?: {
+		/**
+		 * @param {boolean} [options.skipQueue] - An optional boolean, default false. Indicates whether or not to skip the action queue on the coFE base SDK and execute fully asyncronously. May cause race conditions if used incorrectly.
+		 */
+		skipQueue?: boolean;
+		/**
+		 * @param {boolean} [options.customHeaderValue] - An optional string, the value to assign to a "coFE-Custom-Configuration" header value. Overrides customHeaderValue passed in coFE base SDK configure.
+		 */
+		customHeaderValue?: string;
+		/**
+		 * @param {Object} [options.serverOptions] - An optional object containing the res and req objects for ServerResponse and IncomingMessage with cookies respectively. Required for server-side rendering session management.
+		 */
 		serverOptions?: ServerOptions;
 	}
 ) => Promise<SDKResponse<Cart>>;
@@ -112,6 +209,17 @@ type RemoveCartItemAction = (
 type GetCartShippingMethodsAction = (
 	query?: GetCartShippingMethodsQuery,
 	options?: {
+		/**
+		 * @param {boolean} [options.skipQueue] - An optional boolean, default false. Indicates whether or not to skip the action queue on the coFE base SDK and execute fully asyncronously. May cause race conditions if used incorrectly.
+		 */
+		skipQueue?: boolean;
+		/**
+		 * @param {boolean} [options.customHeaderValue] - An optional string, the value to assign to a "coFE-Custom-Configuration" header value. Overrides customHeaderValue passed in coFE base SDK configure.
+		 */
+		customHeaderValue?: string;
+		/**
+		 * @param {Object} [options.serverOptions] - An optional object containing the res and req objects for ServerResponse and IncomingMessage with cookies respectively. Required for server-side rendering session management.
+		 */
 		serverOptions?: ServerOptions;
 	}
 ) => Promise<SDKResponse<ShippingMethod[]>>;
@@ -119,6 +227,17 @@ type GetCartShippingMethodsAction = (
 type GetAvailableCartShippingMethodsAction = (
 	query?: GetAvailableCartShippingMethodsQuery,
 	options?: {
+		/**
+		 * @param {boolean} [options.skipQueue] - An optional boolean, default false. Indicates whether or not to skip the action queue on the coFE base SDK and execute fully asyncronously. May cause race conditions if used incorrectly.
+		 */
+		skipQueue?: boolean;
+		/**
+		 * @param {boolean} [options.customHeaderValue] - An optional string, the value to assign to a "coFE-Custom-Configuration" header value. Overrides customHeaderValue passed in coFE base SDK configure.
+		 */
+		customHeaderValue?: string;
+		/**
+		 * @param {Object} [options.serverOptions] - An optional object containing the res and req objects for ServerResponse and IncomingMessage with cookies respectively. Required for server-side rendering session management.
+		 */
 		serverOptions?: ServerOptions;
 	}
 ) => Promise<SDKResponse<ShippingMethod[]>>;
@@ -127,6 +246,17 @@ type SetCartShippingMethodAction = (
 	payload: SetCartShippingMethodPayload,
 	query?: SetCartShippingMethodQuery,
 	options?: {
+		/**
+		 * @param {boolean} [options.skipQueue] - An optional boolean, default false. Indicates whether or not to skip the action queue on the coFE base SDK and execute fully asyncronously. May cause race conditions if used incorrectly.
+		 */
+		skipQueue?: boolean;
+		/**
+		 * @param {boolean} [options.customHeaderValue] - An optional string, the value to assign to a "coFE-Custom-Configuration" header value. Overrides customHeaderValue passed in coFE base SDK configure.
+		 */
+		customHeaderValue?: string;
+		/**
+		 * @param {Object} [options.serverOptions] - An optional object containing the res and req objects for ServerResponse and IncomingMessage with cookies respectively. Required for server-side rendering session management.
+		 */
 		serverOptions?: ServerOptions;
 	}
 ) => Promise<SDKResponse<Cart>>;
@@ -135,6 +265,17 @@ type RedeemDiscountCodeAction = (
 	payload: RedeemDiscountCodePayload,
 	query?: RedeemDiscountCodeQuery,
 	options?: {
+		/**
+		 * @param {boolean} [options.skipQueue] - An optional boolean, default false. Indicates whether or not to skip the action queue on the coFE base SDK and execute fully asyncronously. May cause race conditions if used incorrectly.
+		 */
+		skipQueue?: boolean;
+		/**
+		 * @param {boolean} [options.customHeaderValue] - An optional string, the value to assign to a "coFE-Custom-Configuration" header value. Overrides customHeaderValue passed in coFE base SDK configure.
+		 */
+		customHeaderValue?: string;
+		/**
+		 * @param {Object} [options.serverOptions] - An optional object containing the res and req objects for ServerResponse and IncomingMessage with cookies respectively. Required for server-side rendering session management.
+		 */
 		serverOptions?: ServerOptions;
 	}
 ) => Promise<SDKResponse<Cart>>;
@@ -143,6 +284,17 @@ type RemoveDiscountCodeAction = (
 	payload: RemoveDiscountCodePayload,
 	query?: RemoveDiscountCodeQuery,
 	options?: {
+		/**
+		 * @param {boolean} [options.skipQueue] - An optional boolean, default false. Indicates whether or not to skip the action queue on the coFE base SDK and execute fully asyncronously. May cause race conditions if used incorrectly.
+		 */
+		skipQueue?: boolean;
+		/**
+		 * @param {boolean} [options.customHeaderValue] - An optional string, the value to assign to a "coFE-Custom-Configuration" header value. Overrides customHeaderValue passed in coFE base SDK configure.
+		 */
+		customHeaderValue?: string;
+		/**
+		 * @param {Object} [options.serverOptions] - An optional object containing the res and req objects for ServerResponse and IncomingMessage with cookies respectively. Required for server-side rendering session management.
+		 */
 		serverOptions?: ServerOptions;
 	}
 ) => Promise<SDKResponse<Cart>>;
@@ -151,6 +303,17 @@ type UpdatePaymentAction = (
 	payload: UpdatePaymentPayload,
 	query?: UpdatePaymentQuery,
 	options?: {
+		/**
+		 * @param {boolean} [options.skipQueue] - An optional boolean, default false. Indicates whether or not to skip the action queue on the coFE base SDK and execute fully asyncronously. May cause race conditions if used incorrectly.
+		 */
+		skipQueue?: boolean;
+		/**
+		 * @param {boolean} [options.customHeaderValue] - An optional string, the value to assign to a "coFE-Custom-Configuration" header value. Overrides customHeaderValue passed in coFE base SDK configure.
+		 */
+		customHeaderValue?: string;
+		/**
+		 * @param {Object} [options.serverOptions] - An optional object containing the res and req objects for ServerResponse and IncomingMessage with cookies respectively. Required for server-side rendering session management.
+		 */
 		serverOptions?: ServerOptions;
 	}
 ) => Promise<SDKResponse<Payment>>;
@@ -159,6 +322,17 @@ type AddPaymentByInvoiceAction = (
 	payload: AddPaymentByInvoicePayload,
 	query?: AddPaymentByInvoiceQuery,
 	options?: {
+		/**
+		 * @param {boolean} [options.skipQueue] - An optional boolean, default false. Indicates whether or not to skip the action queue on the coFE base SDK and execute fully asyncronously. May cause race conditions if used incorrectly.
+		 */
+		skipQueue?: boolean;
+		/**
+		 * @param {boolean} [options.customHeaderValue] - An optional string, the value to assign to a "coFE-Custom-Configuration" header value. Overrides customHeaderValue passed in coFE base SDK configure.
+		 */
+		customHeaderValue?: string;
+		/**
+		 * @param {Object} [options.serverOptions] - An optional object containing the res and req objects for ServerResponse and IncomingMessage with cookies respectively. Required for server-side rendering session management.
+		 */
 		serverOptions?: ServerOptions;
 	}
 ) => Promise<SDKResponse<Cart>>;
@@ -167,6 +341,17 @@ type CheckoutCartAction = (
 	payload: CheckoutCartPayload,
 	query?: CheckoutCartQuery,
 	options?: {
+		/**
+		 * @param {boolean} [options.skipQueue] - An optional boolean, default false. Indicates whether or not to skip the action queue on the coFE base SDK and execute fully asyncronously. May cause race conditions if used incorrectly.
+		 */
+		skipQueue?: boolean;
+		/**
+		 * @param {boolean} [options.customHeaderValue] - An optional string, the value to assign to a "coFE-Custom-Configuration" header value. Overrides customHeaderValue passed in coFE base SDK configure.
+		 */
+		customHeaderValue?: string;
+		/**
+		 * @param {Object} [options.serverOptions] - An optional object containing the res and req objects for ServerResponse and IncomingMessage with cookies respectively. Required for server-side rendering session management.
+		 */
 		serverOptions?: ServerOptions;
 	}
 ) => Promise<SDKResponse<Order>>;
@@ -175,6 +360,17 @@ type ReturnOrderItemsAction = (
 	payload: ReturnOrderItemsPayload,
 	query?: ReturnOrderItemsQuery,
 	options?: {
+		/**
+		 * @param {boolean} [options.skipQueue] - An optional boolean, default false. Indicates whether or not to skip the action queue on the coFE base SDK and execute fully asyncronously. May cause race conditions if used incorrectly.
+		 */
+		skipQueue?: boolean;
+		/**
+		 * @param {boolean} [options.customHeaderValue] - An optional string, the value to assign to a "coFE-Custom-Configuration" header value. Overrides customHeaderValue passed in coFE base SDK configure.
+		 */
+		customHeaderValue?: string;
+		/**
+		 * @param {Object} [options.serverOptions] - An optional object containing the res and req objects for ServerResponse and IncomingMessage with cookies respectively. Required for server-side rendering session management.
+		 */
 		serverOptions?: ServerOptions;
 	}
 ) => Promise<SDKResponse<Order>>;
@@ -183,6 +379,17 @@ type CancelOrderAction = (
 	payload: CancelOrderPayload,
 	query?: CancelOrderQuery,
 	options?: {
+		/**
+		 * @param {boolean} [options.skipQueue] - An optional boolean, default false. Indicates whether or not to skip the action queue on the coFE base SDK and execute fully asyncronously. May cause race conditions if used incorrectly.
+		 */
+		skipQueue?: boolean;
+		/**
+		 * @param {boolean} [options.customHeaderValue] - An optional string, the value to assign to a "coFE-Custom-Configuration" header value. Overrides customHeaderValue passed in coFE base SDK configure.
+		 */
+		customHeaderValue?: string;
+		/**
+		 * @param {Object} [options.serverOptions] - An optional object containing the res and req objects for ServerResponse and IncomingMessage with cookies respectively. Required for server-side rendering session management.
+		 */
 		serverOptions?: ServerOptions;
 	}
 ) => Promise<SDKResponse<Order>>;
@@ -190,12 +397,23 @@ type CancelOrderAction = (
 type QueryOrdersAction = (
 	query?: QueryOrdersQuery,
 	options?: {
+		/**
+		 * @param {boolean} [options.skipQueue] - An optional boolean, default false. Indicates whether or not to skip the action queue on the coFE base SDK and execute fully asyncronously. May cause race conditions if used incorrectly.
+		 */
+		skipQueue?: boolean;
+		/**
+		 * @param {boolean} [options.customHeaderValue] - An optional string, the value to assign to a "coFE-Custom-Configuration" header value. Overrides customHeaderValue passed in coFE base SDK configure.
+		 */
+		customHeaderValue?: string;
+		/**
+		 * @param {Object} [options.serverOptions] - An optional object containing the res and req objects for ServerResponse and IncomingMessage with cookies respectively. Required for server-side rendering session management.
+		 */
 		serverOptions?: ServerOptions;
 	}
 ) => Promise<SDKResponse<PaginatedResult<Order>>>;
 
 export {
-    type ClearCartAction,
+	type ClearCartAction,
 	type GetCartAction,
 	type UpdateCartAction,
 	type ReassignCartAction,
