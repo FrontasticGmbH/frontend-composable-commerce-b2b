@@ -8,6 +8,10 @@ import {
 	AddBusinessUnitAddressPayload,
 	UpdateBusinessUnitAddressPayload,
 	RemoveBusinessUnitAddressPayload,
+	CreateApprovalRulePayload,
+	UpdateApprovalRulePayload,
+	ApproveApprovalFlowPayload,
+	RejectApprovalFlowPayload,
 } from "../../types/payloads/BusinessUnitPayloads";
 import {
 	GetBusinessUnitQuery,
@@ -22,6 +26,12 @@ import {
 	UpdateBusinessUnitAddressQuery,
 	RemoveBusinessUnitAddressQuery,
 	SetBusinessUnitAndStoreKeysQuery,
+	CreateApprovalRuleQuery,
+	QueryApprovalRulesQuery,
+	UpdateApprovalRuleQuery,
+	QueryApprovalFlowsQuery,
+	RejectApprovalFlowQuery,
+	ApproveApprovalFlowQuery,
 } from "../../types/queries/BusinessUnitQueries";
 import {
 	GetBusinessUnitAction,
@@ -39,14 +49,23 @@ import {
 	UpdateBusinessUnitAddressAction,
 	RemoveBusinessUnitAddressAction,
 	SetBusinessUnitAndStoreKeysAction,
+	CreateApprovalRuleAction,
+	QueryApprovalFlowsAction,
+	QueryApprovalRulesAction,
+	UpdateApprovalRuleAction,
+	RejectApprovalFlowAction,
+	ApproveApprovalFlowAction,
 } from "../../types/actions/BusinessUnitActions";
 import { ComposableCommerceEventsB2B } from "../../types/events/ComposableCommerceEventsB2B";
 import {
+	ApprovalFlow,
+	ApprovalRule,
 	Associate,
 	AssociateRole,
 	BusinessUnit,
 } from "@shared/types/business-unit";
 import { Order } from "@shared/types/cart";
+import { PaginatedResult } from "@shared/types/result";
 
 export type BusinessUnitActions = {
 	getBusinessUnit: GetBusinessUnitAction;
@@ -64,6 +83,12 @@ export type BusinessUnitActions = {
 	updateAddress: UpdateBusinessUnitAddressAction;
 	removeAddress: RemoveBusinessUnitAddressAction;
 	setBusinessUnitAndStoreKeys: SetBusinessUnitAndStoreKeysAction;
+	createApprovalRule: CreateApprovalRuleAction;
+	queryApprovalRules: QueryApprovalRulesAction;
+	updateApprovalRule: UpdateApprovalRuleAction;
+	queryApprovalFlows: QueryApprovalFlowsAction;
+	approveApprovalFlow: ApproveApprovalFlowAction;
+	rejectApprovalFlow: RejectApprovalFlowAction;
 };
 
 export const getBusinessUnitActions = (
@@ -328,6 +353,120 @@ export const getBusinessUnitActions = (
 		) => {
 			const response = await sdk.callAction<void>({
 				actionName: "business-unit/setBusinessUnitAndStoreKeys",
+				query,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
+			});
+			return response;
+		},
+		createApprovalRule: async (
+			payload: CreateApprovalRulePayload,
+			query: CreateApprovalRuleQuery,
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
+				serverOptions?: ServerOptions;
+			} = {}
+		) => {
+			const response = await sdk.callAction<ApprovalRule>({
+				actionName: "business-unit/createApprovalRule",
+				payload,
+				query,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
+			});
+			return response;
+		},
+		queryApprovalRules: async (
+			query: QueryApprovalRulesQuery,
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
+				serverOptions?: ServerOptions;
+			} = {}
+		) => {
+			const response = await sdk.callAction<
+				PaginatedResult<ApprovalRule>
+			>({
+				actionName: "business-unit/queryApprovalRules",
+				query,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
+			});
+			return response;
+		},
+		updateApprovalRule: async (
+			payload: UpdateApprovalRulePayload,
+			query: UpdateApprovalRuleQuery,
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
+				serverOptions?: ServerOptions;
+			} = {}
+		) => {
+			const response = await sdk.callAction<ApprovalRule>({
+				actionName: "business-unit/updateApprovalRule",
+				payload,
+				query,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
+			});
+			return response;
+		},
+		queryApprovalFlows: async (
+			query: QueryApprovalFlowsQuery,
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
+				serverOptions?: ServerOptions;
+			} = {}
+		) => {
+			const response = await sdk.callAction<
+				PaginatedResult<ApprovalFlow>
+			>({
+				actionName: "business-unit/queryApprovalFlows",
+				query,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
+			});
+			return response;
+		},
+		approveApprovalFlow: async (
+			payload: ApproveApprovalFlowPayload,
+			query: ApproveApprovalFlowQuery,
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
+				serverOptions?: ServerOptions;
+			} = {}
+		) => {
+			const response = await sdk.callAction<ApprovalFlow>({
+				actionName: "business-unit/approveApprovalFlow",
+				payload,
+				query,
+				skipQueue: options.skipQueue,
+				customHeaderValue: options.customHeaderValue,
+				serverOptions: options.serverOptions,
+			});
+			return response;
+		},
+		rejectApprovalFlow: async (
+			payload: RejectApprovalFlowPayload,
+			query: RejectApprovalFlowQuery,
+			options: {
+				skipQueue?: boolean;
+				customHeaderValue?: string;
+				serverOptions?: ServerOptions;
+			} = {}
+		) => {
+			const response = await sdk.callAction<ApprovalFlow>({
+				actionName: "business-unit/rejectApprovalFlow",
+				payload,
 				query,
 				skipQueue: options.skipQueue,
 				customHeaderValue: options.customHeaderValue,

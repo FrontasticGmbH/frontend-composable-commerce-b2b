@@ -1,4 +1,9 @@
 
+## Version 3.1.0 (2024-06-05)
+
+
+* feat: added approval rule and approval flow business unit actions
+
 ## Version 3.0.0 (2024-05-28)
 
 

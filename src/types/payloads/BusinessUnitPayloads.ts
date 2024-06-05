@@ -1,4 +1,10 @@
 import { Address } from "@shared/types/account";
+import {
+	ApprovalRule,
+	ApprovalRuleStatus,
+	ApproverHierarchy,
+	AssociateRole,
+} from "@shared/types/business-unit";
 
 type CreateBusinessUnitPayload = {
 	account: {
@@ -39,6 +45,31 @@ type RemoveBusinessUnitAddressPayload = {
 	addressId: string;
 };
 
+type CreateApprovalRulePayload = {
+	approvalRule: ApprovalRule;
+};
+
+type UpdateApprovalRulePayload = {
+	approvalRule: {
+		approvalRuleId: string;
+		key?: string;
+		name?: string;
+		description?: string;
+		approvalRuleStatus?: ApprovalRuleStatus;
+		predicate?: string;
+		approvers?: ApproverHierarchy;
+		requesters?: AssociateRole[];
+	};
+};
+
+type ApproveApprovalFlowPayload = {
+	businessUnitKey: string;
+};
+
+type RejectApprovalFlowPayload = {
+	businessUnitKey: string;
+};
+
 export {
 	type CreateBusinessUnitPayload,
 	type UpdateBusinessUnitPayload,
@@ -48,4 +79,8 @@ export {
 	type AddBusinessUnitAddressPayload,
 	type UpdateBusinessUnitAddressPayload,
 	type RemoveBusinessUnitAddressPayload,
+	type CreateApprovalRulePayload,
+	type UpdateApprovalRulePayload,
+	type ApproveApprovalFlowPayload,
+	type RejectApprovalFlowPayload,
 };
